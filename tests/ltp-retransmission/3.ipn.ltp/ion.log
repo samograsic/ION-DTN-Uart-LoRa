@@ -1,0 +1,81 @@
+[2022/08/14-19:00:01] [i] rfxclock is running.
+[2022/08/14-19:00:01] [i] No congestion forecast; horizon reached.
+[2022/08/14-19:00:01] [i] ionwarn finished.
+[2022/08/14-19:00:01] [i] This node deploys bundle protocol version 7.
+[2022/08/14-19:00:01] [?] Can't find ION security database.
+[2022/08/14-19:00:01] [?] Warning: running without bundle security.
+[2022/08/14-19:00:01] [i] Span to engine 3 (max BER 0.000100, max xmit segment size 1200, max recv segment size 1): xmit segment loss rate 0.617186, recv segment loss rate 0.000800, max timeouts 29.
+[2022/08/14-19:00:01] [i] Span to engine 2 (max BER 0.000100, max xmit segment size 1200, max recv segment size 1): xmit segment loss rate 0.617186, recv segment loss rate 0.000800, max timeouts 29.
+[2022/08/14-19:00:01] [i] Total max export sessions does not exceed estimate.
+[2022/08/14-19:00:01] [i] No congestion forecast; horizon reached.
+[2022/08/14-19:00:01] [i] ionwarn finished.
+[2022/08/14-19:00:01] [i] ltpmeter is running.
+[2022/08/14-19:00:01] [i] ltpclock is running.
+[2022/08/14-19:00:01] [i] ltpmeter is running.
+[2022/08/14-19:00:01] [i] ltpdeliv is running.
+[2022/08/14-19:00:01] [i] bpclm is running: ipn:3.0
+[2022/08/14-19:00:01] [i] udplso is running, spec=[127.0.0.1:0], rengine=3.
+[2022/08/14-19:00:01] [i] udplso is running, spec=[127.0.0.1:0], rengine=2.
+[2022/08/14-19:00:01] [i] udplsi is running, spec=[127.0.0.1:3113].
+[2022/08/14-19:00:01] [i] bpclm is running: ipn:2.0
+[2022/08/14-19:00:02] [i] No congestion forecast; horizon reached.
+[2022/08/14-19:00:02] [i] ionwarn finished.
+[2022/08/14-19:00:02] [i] Not configured for multicast; cpsd stopping.
+[2022/08/14-19:00:02] [i] bpclock is running.
+[2022/08/14-19:00:02] [i] ipnfw is running.
+[2022/08/14-19:00:02] [i] bptransit is running.
+[2022/08/14-19:00:02] [i] Not configured for IRF; irfd stopping: ipn:3.271
+[2022/08/14-19:00:02] [i] ipnadminep is running.
+[2022/08/14-19:00:02] [i] ltpclo is running.
+[2022/08/14-19:00:02] [i] ltpclo is running.
+[2022/08/14-19:00:02] [i] ltpcli is running.
+[2022/08/14-19:00:07] [i] No congestion forecast; horizon reached.
+[2022/08/14-19:00:07] [i] ionwarn finished.
+[2022/08/14-19:00:07] [x] src from 1969/12/31-16:00:00 to 2022/08/14-19:00:07: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:00:07] [x] fwd from 1969/12/31-16:00:00 to 2022/08/14-19:00:07: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:00:07] [x] xmt from 1969/12/31-16:00:00 to 2022/08/14-19:00:07: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:00:07] [x] rcv from 1969/12/31-16:00:00 to 2022/08/14-19:00:07: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:00:07] [x] dlv from 1969/12/31-16:00:00 to 2022/08/14-19:00:07: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:00:07] [x] rfw from 1969/12/31-16:00:00 to 2022/08/14-19:00:07: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:00:07] [x] exp from 1969/12/31-16:00:00 to 2022/08/14-19:00:07: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:00:08] [i] Span to engine 2 (max BER 0.000100, max xmit segment size 1200, max recv segment size 909): xmit segment loss rate 0.617186, recv segment loss rate 0.516816, max timeouts 29.
+[2022/08/14-19:00:08] [i] Span to engine 2 (max BER 0.000100, max xmit segment size 1200, max recv segment size 913): xmit segment loss rate 0.617186, recv segment loss rate 0.518360, max timeouts 29.
+[2022/08/14-19:00:08] [i] Span to engine 2 (max BER 0.000100, max xmit segment size 1200, max recv segment size 988): xmit segment loss rate 0.617186, recv segment loss rate 0.546414, max timeouts 29.
+[2022/08/14-19:00:10] [i] Span to engine 2 (max BER 0.000100, max xmit segment size 1200, max recv segment size 1191): xmit segment loss rate 0.617186, recv segment loss rate 0.614420, max timeouts 29.
+[2022/08/14-19:00:12] [i] bpcounter has ended.
+[2022/08/14-19:00:13] [i] ipnfw forwarder has ended.
+[2022/08/14-19:00:13] [i] Plan has been stopped: ipn:2.0
+[2022/08/14-19:00:13] [i] Endpoint has been stopped.
+[2022/08/14-19:00:13] [i] Administrative endpoint terminated.
+[2022/08/14-19:00:13] [i] bpclm has ended: ipn:2.0
+[2022/08/14-19:00:13] [i] ipnadminep has ended.
+[2022/08/14-19:00:13] [i] Plan has been stopped: ipn:3.0
+[2022/08/14-19:00:13] [i] bpclm has ended: ipn:3.0
+[2022/08/14-19:00:13] [i] Outduct has been stopped: 2
+[2022/08/14-19:00:13] [i] Outduct has been stopped: 3
+[2022/08/14-19:00:13] [i] ltpclo outduct closed.
+[2022/08/14-19:00:13] [i] ltpclo outduct closed.
+[2022/08/14-19:00:13] [i] ltpclo duct has ended.
+[2022/08/14-19:00:13] [i] ltpclo duct has ended.
+[2022/08/14-19:00:13] [i] ltpcli receiver thread has ended.
+[2022/08/14-19:00:13] [i] bpclock has ended.
+[2022/08/14-19:00:13] [i] ltpcli duct has ended.
+[2022/08/14-19:00:13] [i] bptransit has ended.
+[2022/08/14-19:00:14] [i] LTP meter to engine 3 is stopped.
+[2022/08/14-19:00:14] [i] LSO to engine 3 is stopped.
+[2022/08/14-19:00:14] [i] LSO to engine 2 is stopped.
+[2022/08/14-19:00:14] [i] ltpmeter has ended.
+[2022/08/14-19:00:14] [i] LTP meter to engine 2 is stopped.
+[2022/08/14-19:00:14] libudplsa irecvfrom() receives STOP byte
+[2022/08/14-19:00:14] [i] ltpmeter has ended.
+[2022/08/14-19:00:14] [i] udplsa receiver thread has ended.
+[2022/08/14-19:00:14] [i] ltpclock has ended.
+[2022/08/14-19:00:14] libudplsa irecvfrom() receives STOP byte
+[2022/08/14-19:00:14] [i] udplsa receiver thread has ended.
+[2022/08/14-19:00:14] libudplsa irecvfrom() receives STOP byte
+[2022/08/14-19:00:14] [i] udplsa receiver thread has ended.
+[2022/08/14-19:00:14] [i] udplso has ended.
+[2022/08/14-19:00:14] [i] udplso has ended.
+[2022/08/14-19:00:14] [i] udplsi has ended.
+[2022/08/14-19:00:14] [i] ltpdeliv has ended.
+[2022/08/14-19:00:15] [i] rfxclock has ended.

@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<p>tcaboot - Trusted Collective (TC) authority initialization utility</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<p><b>tcaboot</b> <i>multicast_group_number_for_TC_bulletins</i> <i>multicast_group_number_for_TC_records</i> <i>number_of_authorities_in_collective</i> <i>K</i> <i>R</i> [ <i>delay</i> ]</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p><b>tcaboot</b> writes a TC authority administration command file that initializes a TC authority database. The file, named &quot;boot.tcarc&quot;, is written to the current working directory. It simply contains two authority configuration commands that initialize the TC authority database for the TC application and then set the initial bulletin compilation time for this authority to the current ctime plus <i>delay</i> seconds. If omitted, <i>delay</i> defaults to 5. The other command-line arguments for <b>tcaboot</b> are discussed in the descriptions of application initialization commands for <b>tcaadmin</b>; see the tcarc(5) manual page for details.</p>
+
+<h1 id="EXIT-STATUS">EXIT STATUS</h1>
+
+<dl>
+
+<dt id="pod0">&quot;0&quot;</dt>
+<dd>
+
+<p>Successful generation of TC authority initialization file.</p>
+
+</dd>
+</dl>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<dl>
+
+<dt id="tcaboot-210-209-6-50-.2">tcaboot 210 209 6 50 .2</dt>
+<dd>
+
+<p>Writes a boot.tcarc file that initializes the local node&#39;s TC authority database as indicated and sets the next bulletin compilation time to the current time plus 5 seconds.</p>
+
+</dd>
+<dt id="tcaboot-210-209-6-50-.2-90">tcaboot 210 209 6 50 .2 90</dt>
+<dd>
+
+<p>Writes a boot.tcarc file that initializes the local node&#39;s TC authority database as indicated and sets the next bulletin compilation time to the current time plus 90 seconds.</p>
+
+</dd>
+</dl>
+
+<h1 id="FILES">FILES</h1>
+
+<p>No files apply.</p>
+
+<h1 id="ENVIRONMENT">ENVIRONMENT</h1>
+
+<p>No environment variables apply.</p>
+
+<h1 id="DIAGNOSTICS">DIAGNOSTICS</h1>
+
+<p>The following diagnostics may be issued to the log file:</p>
+
+<dl>
+
+<dt id="Cant-open-cmd-file">Can&#39;t open cmd file</dt>
+<dd>
+
+<p><b>tcaboot</b> is unable to create a file named boot.tcarc for the indicated reason, a system error.</p>
+
+</dd>
+<dt id="Cant-write-to-cmd-file">Can&#39;t write to cmd file</dt>
+<dd>
+
+<p><b>tcaboot</b> is unable to write to boot.tcarc for the indicated reason, a system error.</p>
+
+</dd>
+</dl>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>Report bugs to &lt;ion-dtn-support@lists.sourceforge.net&gt;</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>tcaadmin(1), tcarc(5)</p>
+
+
+</body>
+
+</html>
+
+

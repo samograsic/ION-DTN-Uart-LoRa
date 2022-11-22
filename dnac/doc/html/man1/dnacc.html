@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<p>dnacc - child agent for DTN node auto-configuration</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<p><b>dnacc</b> <i>port_nbr</i> <i>password_path_name</i></p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p><b>dnacc</b> is a utility program that runs as an application in an ION node that has been automatically configured by the dnac utility running in a separate &quot;sponsor&quot; node on the same computer. Its purpose is to generate the new node&#39;s public/private key pair and pass the public key back to the sponsor node, which will be listening for that information on the TCP socket identified by <i>port_nbr</i>. This enables the sponsor node to attest to the new node&#39;s authenticity by asserting its public key to the network&#39;s delay-tolerant public key infrastructure.</p>
+
+<h1 id="EXIT-STATUS">EXIT STATUS</h1>
+
+<dl>
+
+<dt id="pod0">&quot;0&quot;</dt>
+<dd>
+
+<p><b>dnacc</b> has terminated.</p>
+
+</dd>
+</dl>
+
+<h1 id="FILES">FILES</h1>
+
+<p>The file identified by <i>password_path_name</i> is expected to contain the passphrase that will enable the newly computed private key to be stored in encrypted representation. The file MUST be accessible only to the owner of the <b>dnacc</b> executable.</p>
+
+<h1 id="ENVIRONMENT">ENVIRONMENT</h1>
+
+<p>No environment variables apply.</p>
+
+<h1 id="DIAGNOSTICS">DIAGNOSTICS</h1>
+
+<p>The following diagnostics may be issued to the <b>ion.log</b> log file:</p>
+
+<dl>
+
+<dt id="dnacc-cant-attach-to-DTKA-system">dnacc can&#39;t attach to DTKA system.</dt>
+<dd>
+
+<p><b>dtka</b> has not yet been initialized.</p>
+
+</dd>
+</dl>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>Report bugs to &lt;ion-dtn-support@lists.sourceforge.net&gt;</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>dnac(1), dtka(1), dtkaadmin(1), dtkarc(5)</p>
+
+
+</body>
+
+</html>
+
+

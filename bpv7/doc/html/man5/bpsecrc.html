@@ -1,0 +1,207 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>bpsecrc - BP security policy management commands file</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<p>bpsecrc - BP security policy management commands file</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>BP security policy management commands are passed to <b>bpsecadmin</b> either in a file of text lines or interactively at <b>bpsecadmin</b>&#39;s command prompt (:). Commands are interpreted line-by line, with exactly one command per line. JSON commands may span multiple lines. The formats and effects of the BP security policy management commands are described below.</p>
+
+<p>A parameter identifed as an <i>eid_expr</i> is an &quot;endpoint ID expression.&quot; For all commands, whenever the last character of an endpoint ID expression is the wild-card character &#39;*&#39;, an applicable endpoint ID &quot;matches&quot; this EID expression if all characters of the endpoint ID expression prior to the last one are equal to the corresponding characters of that endpoint ID. Otherwise an applicable endpoint ID &quot;matches&quot; the EID expression only when all characters of the EID and EID expression are identical.</p>
+
+<p>At present, ION supports a subset of the proposed &quot;BPSec&quot; security protocol specification currently under consideration by the Internet Engineering Steering Group. Since BPSec is not yet a published standard, ION&#39;s Bundle Protocol security mechanisms will not necessarily interoperate with those of other BP implementations. This is unfortunate but (we hope) temporary, as BPSec represents a major improvement in bundle security. Future releases of ION will implement the entire BPSec specification.</p>
+
+<h1 id="COMMANDS">COMMANDS</h1>
+
+<dl>
+
+<dt id="pod"><b>?</b></dt>
+<dd>
+
+<p>The <b>help</b> command. This will display a listing of the commands and their formats. It is the same as the <b>h</b> command.</p>
+
+</dd>
+<dt id="pod1"><b>#</b></dt>
+<dd>
+
+<p>Comment line. Lines beginning with <b>#</b> are not interpreted.</p>
+
+</dd>
+<dt id="e-1-0"><b>e</b> { 1 | 0 }</dt>
+<dd>
+
+<p>Echo control. Setting echo to 1 causes all output printed by bpsecadmin to be logged as well as sent to stdout. Setting echo to 0 disables this behavior.</p>
+
+</dd>
+<dt id="v"><b>v</b></dt>
+<dd>
+
+<p>Version number. Prints out the version of ION currently installed. HINT: combine with <b>e 1</b> command to log the version number at startup.</p>
+
+</dd>
+<dt id="a-bibrule-source_eid_expr-destination_eid_expr-block_type_number-ciphersuite_name-key_name"><b>a bibrule</b> <i>source_eid_expr</i> <i>destination_eid_expr</i> <i>block_type_number</i> <i>{ &#39;&#39; | ciphersuite_name key_name }</i></dt>
+<dd>
+
+<p>The <b>add bibrule</b> command. This command adds a rule specifying the manner in which Block Integrity Block (BIB) validation will be applied to blocks of type <i>block_type_number</i> for all bundles sourced at any node whose administrative endpoint ID matches <i>source_eid_expr</i> and destined for any node whose administrative endpoint ID ID matches <i>destination_eid_expr</i>.</p>
+
+<p>If a zero-length string (&#39;&#39;) is indicated instead of a <i>ciphersuite_name</i> then BIB validation is disabled for this source/destination EID expression pair: blocks of the type indicated by <i>block_type_number</i> in all bundles sourced at nodes with matching administrative endpoint IDs and destined for nodes with matching administrative endpoint IDs will be immediately deemed valid. Otherwise, a block of the indicated type that is attached to a bundle sourced at a node with matching administrative endpoint ID and destined for a node with matching administrative endpoint ID will only be deemed valid if the bundle contains a corresponding BIB computed via the ciphersuite named by <i>ciphersuite_name</i> using a key value that is identical to the current value of the key named <i>key_name</i> in the local security policy database.</p>
+
+</dd>
+<dt id="c-bibrule-source_eid_expr-destination_eid_expr-block_type_number-ciphersuite_name-key_name"><b>c bibrule</b> <i>source_eid_expr</i> <i>destination_eid_expr</i> <i>block_type_number</i> <i>{ &#39;&#39; | ciphersuite_name key_name }</i></dt>
+<dd>
+
+<p>The <b>change bibrule</b> command. This command changes the ciphersuite name and/or key name for the BIB rule pertaining to the source/destination EID expression pair identified by <i>source_eid_expr</i> and <i>destination_eid_expr</i> and the block identified by <i>block_type_number</i>. Note that the <i>eid_expr</i>s must exactly match those of the rule that is to be modified, including any terminating wild-card character.</p>
+
+</dd>
+<dt id="d-bibrule-source_eid_expr-destination_eid_expr-block_type_number"><b>d bibrule</b> <i>source_eid_expr</i> <i>destination_eid_expr</i> <i>block_type_number</i></dt>
+<dd>
+
+<p>The <b>delete bibrule</b> command. This command deletes the BIB rule pertaining to the source/destination EID expression pair identified by <i>sender_eid_expr</i> and <i>receiver_eid_expr</i> and the block identified by <i>block_type_number</i>. Note that the <i>eid_expr</i>s must exactly match those of the rule that is to be deleted, including any terminating wild-card character.</p>
+
+</dd>
+<dt id="i-bibrule-source_eid_expr-destination_eid_expr-block_type_number"><b>i bibrule</b> <i>source_eid_expr</i> <i>destination_eid_expr</i> <i>block_type_number</i></dt>
+<dd>
+
+<p>This command will print information (the ciphersuite and key names) about the BIB rule pertaining to <i>source_eid_expr</i>, <i>destination_eid_expr</i>, and <i>block_type_number</i>.</p>
+
+</dd>
+<dt id="l-bibrule"><b>l bibrule</b></dt>
+<dd>
+
+<p>This command lists all BIB rules in the security policy database.</p>
+
+</dd>
+<dt id="a-bcbrule-source_eid_expr-destination_eid_expr-block_type_number-ciphersuite_name-key_name"><b>a bcbrule</b> <i>source_eid_expr</i> <i>destination_eid_expr</i> <i>block_type_number</i> <i>{ &#39;&#39; | ciphersuite_name key_name }</i></dt>
+<dd>
+
+<p>The <b>add bcbrule</b> command. This command adds a rule specifying the manner in which Block Confidentiality Block (BCB) encryption will be applied to blocks of type <i>block_type_number</i> for all bundles sourced at any node whose administrative endpoint ID matches <i>source_eid_expr</i> and destined for any node whose administrative endpoint ID ID matches <i>destination_eid_expr</i>.</p>
+
+<p>If a zero-length string (&#39;&#39;) is indicated instead of a <i>ciphersuite_name</i> then BCB encryption is disabled for this source/destination EID expression pair: blocks of the type indicated by <i>block_type_number</i> in all bundles sourced at nodes with matching administrative endpoint IDs and destined for nodes with matching administrative endpoint IDs will be sent in plain text. Otherwise, a block of the indicated type that is attached to a bundle sourced at a node with matching administrative endpoint ID and destined for a node with matching administrative endpoint ID can only be deemed decrypted if the bundle contains a corresponding BCB computed via the ciphersuite named by <i>ciphersuite_name</i> using a key value that is identical to the current value of the key named <i>key_name</i> in the local security policy database.</p>
+
+</dd>
+<dt id="c-bcbrule-source_eid_expr-destination_eid_expr-block_type_number-ciphersuite_name-key_name"><b>c bcbrule</b> <i>source_eid_expr</i> <i>destination_eid_expr</i> <i>block_type_number</i> <i>{ &#39;&#39; | ciphersuite_name key_name }</i></dt>
+<dd>
+
+<p>The <b>change bcbrule</b> command. This command changes the ciphersuite name and/or key name for the BCB rule pertaining to the source/destination EID expression pair identified by <i>source_eid_expr</i> and <i>destination_eid_expr</i> and the block identified by <i>block_type_number</i>. Note that the <i>eid_expr</i>s must exactly match those of the rule that is to be modified, including any terminating wild-card character.</p>
+
+</dd>
+<dt id="d-bcbrule-source_eid_expr-destination_eid_expr-block_type_number"><b>d bcbrule</b> <i>source_eid_expr</i> <i>destination_eid_expr</i> <i>block_type_number</i></dt>
+<dd>
+
+<p>The <b>delete bcbrule</b> command. This command deletes the BCB rule pertaining to the source/destination EID expression pair identified by <i>sender_eid_expr</i> and <i>receiver_eid_expr</i> and the block identified by <i>block_type_number</i>. Note that the <i>eid_expr</i>s must exactly match those of the rule that is to be deleted, including any terminating wild-card character.</p>
+
+</dd>
+<dt id="i-bcbrule-source_eid_expr-destination_eid_expr-block_type_number"><b>i bcbrule</b> <i>source_eid_expr</i> <i>destination_eid_expr</i> <i>block_type_number</i></dt>
+<dd>
+
+<p>This command will print information (the ciphersuite and key names) about the BCB rule pertaining to <i>source_eid_expr</i>, <i>destination_eid_expr</i>, and <i>block_type_number</i>.</p>
+
+</dd>
+<dt id="l-bcbrule"><b>l bcbrule</b></dt>
+<dd>
+
+<p>This command lists all BCB rules in the security policy database.</p>
+
+</dd>
+<dt id="x-sender_eid_expr-receiver_eid_expr-bib-bcb"><b>x</b> <i>[ { ~ | sender_eid_expr } [ { ~ | receiver_eid_expr} [ { ~ | bib | bcb } ] ] ]</i></dt>
+<dd>
+
+<p>This command will clear all rules for the indicated type of bundle security block between the indicated security source and security destination. If block type is omitted it defaults to <b>~</b> signifying &quot;all BPSec blocks&quot;. If both block type and security destination are omitted, security destination defaults to <b>~</b> signifying &quot;all BSP security destinations&quot;. If all three command-line parameters are omitted, then security source defaults to <b>~</b> signifying &quot;all BPSec security sources&quot;.</p>
+
+</dd>
+<dt id="a-event_set-:-name-:-event-set-name-desc-:-opt-description"><b>a</b> <i>{ <b>event_set</b> : { <b>name</b> : event set name, <b>desc</b> : (opt) description } }</i></dt>
+<dd>
+
+<p>The <b>add event_set</b> command. This command will add a named security operation event set to the system.</p>
+
+</dd>
+<dt id="i-event_set-:-name-:-event-set-name"><b>i</b> <i>{ <b>event_set</b> : { <b>name</b> : event set name } }</i></dt>
+<dd>
+
+<p>The <b>info event_set</b> command for event sets displays the information the system maintains for a named event set. The security operation events and configured, optional processing actions associated with the event set are shown.</p>
+
+</dd>
+<dt id="d-event_set-:-name-:-event-set-name"><b>d</b> <i>{ <b>event_set</b> : { <b>name</b> : event set name } }</i></dt>
+<dd>
+
+<p>The <b>delete event_set</b> command deletes a named event set from the system. A named event set cannot be deleted if it is referenced by a security policy rule. All security policy rules associated with the named event set must be deleted before the event set itself may be deleted.</p>
+
+</dd>
+<dt id="l-type-:-event_set"><b>l</b> <i>{<b>type</b> : <b>event_set</b>}</i></dt>
+<dd>
+
+<p>The <b>list event_set</b> command lists the names of all event sets defined in the system.</p>
+
+</dd>
+<dt id="a-event-:-es_ref-:-event-set-name-event_id-:-security-operation-event-ID-actions-:-opt.-processing-action-...-opt.-processing-action-action_parms-:-id:-parm-ID-value:-parm-value-...-id:-parm-ID-value:-parm-value"><b>a</b> <i>{ <b>event</b> : { </i> <i><b>es_ref</b> : event set name,</i> <i><b>event_id</b> : security operation event ID</i> <i><b>actions</b> : [ opt. processing action, ... , opt. processing action ],</i> <i><b>action_parms</b> : [ { <b>id</b>: parm ID, <b>value</b>: parm value }, ... , { <b>id</b>: parm ID, <b>value</b>: parm value } ] } }</i></dt>
+<dd>
+
+<p>The <b>add event</b> command adds security operation event and associated optional processing action(s) to an event set. Multiple processing actions can be specified for a single security operation event.</p>
+
+</dd>
+<dt id="d-event-:-es_ref-:-event-set-name-event_id-:-security-operation-event-ID-actions-:-opt.-processing-action-...-opt.-processing-action"><b>d</b> <i> { <b>event</b> : { </i> <i><b>es_ref</b> : event set name,</i> <i><b>event_id</b> : security operation event ID</i> <i><b>actions</b> : [ opt. processing action, ... , opt. processing action ] } }</i></dt>
+<dd>
+
+<p>The <b>delete event</b> command is used to delete optional processing actions from a named event set. To remove specific processing actions, include both the security operation event and optional processing actions to be removed in the command. To remove all processing actions for a security operation event, exclude the optional processing action field.</p>
+
+</dd>
+<dt id="a-policyrule-:-desc-:-description-filter-:-rule_id-:-Security-policy-rule-id-role-:-Security-policy-role-src-:-Bundle-source-dest-:-Bundle-destination-sec_src-:-Security-source-tgt-:-Security-target-block-type-scid-:-Security-context-ID-spec-:-svc-:-Security-service-scid-:-Security-context-ID-sc_parms-:-id:-SC-parm-ID-value:-SC-parm-value-...-id:-SC-parm-ID-value:-SC-parm-value-es_ref-:-Event-set-name"><b>a</b> <i>{ <b>policyrule</b> : {</i> <i><b>desc</b> : description,</i> <i><b>filter</b> :</i> <i>{</i> <i><b>rule_id</b> : Security policy rule id, <b>role</b> : Security policy role, <b>src</b> : Bundle source, <b>dest</b> : Bundle destination <b>sec_src</b> : Security source <b>tgt</b> : Security target block type, <b>scid</b> : Security context ID, },</i> <i><b>spec</b> : { <b>svc</b> : Security service, <b>scid</b> : Security context ID, <b>sc_parms</b> : [ { <b>id</b>: SC parm ID, <b>value</b>: SC parm value }, ... , { <b>id</b>: SC parm ID, <b>value</b>: SC parm value } ] }, <b>es_ref</b> : Event set name } } </i></dt>
+<dd>
+
+<p>The <b>add policyrule</b> command adds a policy rule to the system, describing a required security operation and the security policy role of the BPA applying the policy statement. The above command adds a policy rule referencing a named event set to the system.</p>
+
+</dd>
+<dt id="d-policyrule-:-rule_id-:-Security-policy-rule-ID"><b>d</b> <i>{ <b>policyrule</b> : { <b>rule_id</b> : Security policy rule ID } }</i></dt>
+<dd>
+
+<p>The <b>delete policyrule</b> command deletes the policy rule identified by its rule ID.</p>
+
+</dd>
+<dt id="i-policyrule-:-Security-policy-rule-id"><b>i</b> <i>{<b>policyrule</b> : Security policy rule id }</i></dt>
+<dd>
+
+<p>The <b>info policyrule</b> command displays the information for the policy rule matching the provided ID.</p>
+
+</dd>
+<dt id="f-policyrule-:-type-:-all-best-src-:-Bundle-source-dest-:-Bundle-destination-ssrc-:-Security-source-scid-:-Security-context-ID-role-:-Security-policy-role"><b>f</b> <i>{<b>policyrule</b> : { <b>type</b> : <b>all | best</b>, <b>src</b> : Bundle source, <b>dest</b> : Bundle destination, <b>ssrc</b> : Security source, <b>scid</b> : Security context ID, <b>role</b> : Security policy role } }</i></dt>
+<dd>
+
+<p>The <b>find policyrule</b> command finds all policy rules matching the provided criteria when type <b>all</b> is selected, and finds the single policy rule that is determined to be the best match when type <b>best</b> is selected.</p>
+
+</dd>
+<dt id="l-type-:-policyrule"><b>l</b> <i>{<b>type</b> : <b>policyrule</b>}</i></dt>
+<dd>
+
+<p>The <b>list policyrule</b> command lists all policy rules currently defined in the system.</p>
+
+</dd>
+<dt id="h"><b>h</b></dt>
+<dd>
+
+<p>The <b>help</b> command. This will display a listing of the commands and their formats. It is the same as the <b>?</b> command.</p>
+
+</dd>
+</dl>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>bpsecadmin(1)</p>
+
+
+</body>
+
+</html>
+
+

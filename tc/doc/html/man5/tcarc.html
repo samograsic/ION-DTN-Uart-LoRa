@@ -1,0 +1,155 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<p>tcarc - Trusted Collective authority configuration commands file</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p>TC authority configuration commands are passed to <b>tcaadmin</b> either in a file of text lines or interactively at <b>tcaadmin</b>&#39;s command prompt (:). Commands are interpreted line-by line, with exactly one command per line. The formats and effects of the TC authority configuration commands are described below.</p>
+
+<h1 id="COMMANDS">COMMANDS</h1>
+
+<dl>
+
+<dt id="pod"><b>?</b></dt>
+<dd>
+
+<p>The <b>help</b> command. This will display a listing of the commands and their formats. It is the same as the <b>h</b> command.</p>
+
+</dd>
+<dt id="pod1"><b>#</b></dt>
+<dd>
+
+<p>Comment line. Lines beginning with <b>#</b> are not interpreted.</p>
+
+</dd>
+<dt id="e-1-0"><b>e</b> { 1 | 0 }</dt>
+<dd>
+
+<p>Echo control. Setting echo to 1 causes all output printed by tcaadmin to be logged as well as sent to stdout. Setting echo to 0 disables this behavior.</p>
+
+</dd>
+<dt id="v"><b>v</b></dt>
+<dd>
+
+<p>Version number. Prints out the version of ION currently installed. HINT: combine with <b>e 1</b> command to log the version number at startup.</p>
+
+</dd>
+<dt id="h"><b>h</b></dt>
+<dd>
+
+<p>The <b>help</b> command. This will display a listing of the commands and their formats. It is the same as the <b>?</b> command.</p>
+
+</dd>
+<dt id="multicast_group_number_for_TC_bulletins-multicast_group_number_for_TC_records-number_of_authorities_in_collective-K-R"><b>1</b> <i>multicast_group_number_for_TC_bulletins</i> <i>multicast_group_number_for_TC_records</i> <i>number_of_authorities_in_collective</i> <i>K</i> <i>R</i></dt>
+<dd>
+
+<p>The <b>initialize</b> command. Until this command is executed, the authority function for the selected TC application is not in operation on the local ION node and most <i>tcaadmin</i> commands will fail.</p>
+
+<p><i>K</i> is the mandated <b>diffusion</b> for the selected TC application, i.e., the number of blocks into which each bulletin of published TC information is divided for transmission.</p>
+
+<p><i>R</i> is the mandated <b>redundancy</b> for the selected TC application, i.e., the percentage of blocks issued per bulletin that will be parity blocks rather than extents of the bulletin itself.</p>
+
+</dd>
+<dt id="i"><b>i</b></dt>
+<dd>
+
+<p>The <b>info</b> This command will print information about the current state of the authority function for the selected TC application on the local node, including the current settings of all parameters that can be managed as described below.</p>
+
+</dd>
+<dt id="s"><b>s</b></dt>
+<dd>
+
+<p>The <b>start</b> command. This command starts the <b>tcarecv</b> and <b>tcacompile</b> daemons of the authority function for the selected TC application on the local node.</p>
+
+</dd>
+<dt id="m-compiletime-time"><b>m compiletime</b> <i>time</i></dt>
+<dd>
+
+<p>The <b>manage compile time</b> command. This command sets the time at which the authority function for the selected TC application on this node will next compile a bulletin. The command is not needed in normal operations, because future compile times are computed automatically as bulletins are compiled. <i>time</i> must be in yyyy/mm/dd-hh:mm:ss format.</p>
+
+</dd>
+<dt id="m-interval-bulletin_compilation_interval"><b>m interval</b> <i>bulletin_compilation_interval</i></dt>
+<dd>
+
+<p>The <b>manage bulletin compilation interval</b> command. This interval, expressed as a number of seconds, controls the period on which the authority function for the selected TC appliction on this node will compile new key information bulletins. The default value is 3600 (one hour).</p>
+
+</dd>
+<dt id="m-grace-bulletin_consensus_grace_time"><b>m grace</b> <i>bulletin_consensus_grace_time</i></dt>
+<dd>
+
+<p>The <b>manage bulletin consensus grace time</b> command. This interval, expressed as a number of seconds, controls the length of time the authority function for the selected TC application on this node will wait after publishing a bulletin before computing a consensus bulletin; this parameter is intended to relax the degree to which the system clocks of all members of the collective authority for this TC application must be in agreement. The default value is 60 (1 minute).</p>
+
+</dd>
+<dt id="authority_array_index-node_number"><b>+</b> <i>authority_array_index</i> <i>node_number</i></dt>
+<dd>
+
+<p>This command asserts that the trusted Nth member of the collective authority for the selected TC application, where N is the <i>authority_array_index</i> value, is the node identified by <i>node_number</i>.</p>
+
+</dd>
+<dt id="authority_array_index"><b>-</b> <i>authority_array_index</i></dt>
+<dd>
+
+<p>This command asserts that the Nth member of the collective authority for the selected TC application, where N is the <i>authority_array_index</i> value, is no longer trusted; bulletins received from this collective authority member must be discarded.</p>
+
+</dd>
+<dt id="a-node_number"><b>a</b> <i>node_number</i></dt>
+<dd>
+
+<p>This command adds the node identified by <i>node_number</i> to the list of nodes hosting <b>authorized_clients</b> for the selected TC application. Once this list has been populated, TC records for this application that are received from clients residing on nodes that are not in the list are automatically discarded by the authority function residing on the local node.</p>
+
+</dd>
+<dt id="d-node_number"><b>d</b> <i>node_number</i></dt>
+<dd>
+
+<p>This command deletes the node identified by <i>node_number</i> from the list of nodes hosting <b>authorized_clients</b> for the selected TC application.</p>
+
+</dd>
+<dt id="l"><b>l</b></dt>
+<dd>
+
+<p>This command lists all nodes currently hosting <b>authorized_clients</b> for the selected TC application.</p>
+
+</dd>
+<dt id="x"><b>x</b></dt>
+<dd>
+
+<p>The <b>stop</b> command. This command stops the <b>tcarecv</b> and <b>tcacompile</b> daemons of the authority function for the selected TC application on the local node.</p>
+
+</dd>
+</dl>
+
+<h1 id="EXAMPLES">EXAMPLES</h1>
+
+<dl>
+
+<dt id="pod-3-6913">+ 3 6913</dt>
+<dd>
+
+<p>Asserts that node 6913 is now member 3 of the collective authority for the selected application.</p>
+
+</dd>
+</dl>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>tcaadmin(1), dtka(3)</p>
+
+
+</body>
+
+</html>
+
+

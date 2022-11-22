@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>bssStreamingApp - Bundle Streaming Service transmission test program</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<p>bssStreamingApp - Bundle Streaming Service transmission test program</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<p><b>bssStreamingApp</b> <i>own_endpoint_ID</i> <i>destination_endpoint_ID</i> [<i>class_of_service</i>]</p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p><b>bssStreamingApp</b> uses BSS to send streaming data over BP from <i>own_endpoint_ID</i> to bssrecv listening at <i>destination_endpoint_ID</i>. <i>class_of_service</i> is as specified for bptrace(1); if omitted, bundles are sent at BP&#39;s standard priority (1).</p>
+
+<p>The bundles issued by <b>bssStreamingApp</b> all have 65000-byte payloads, where the ASCII representation of a positive integer (increasing monotonically from 0, by 1, throughout the operation of the program) appears at the start of each payload. All bundles are sent with custody transfer requested, with time-to-live set to 1 day. The application meters output by sleeping for 12800 microseconds after issuing each bundle.</p>
+
+<p>Use CTRL-C to terminate the program.</p>
+
+<h1 id="FILES">FILES</h1>
+
+<p>No configuration files are needed.</p>
+
+<h1 id="ENVIRONMENT">ENVIRONMENT</h1>
+
+<p>No environment variables apply.</p>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>Report bugs to &lt;ion-dtn-support@lists.sourceforge.net&gt;</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>bssrecv(1), bss(3)</p>
+
+
+</body>
+
+</html>
+
+

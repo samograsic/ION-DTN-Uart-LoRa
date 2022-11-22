@@ -1,0 +1,189 @@
+diff --git a/bpv7/bibe/bibeclo.c b/bpv7/bibe/bibeclo.c
+index 0e832e96..2fa071e9 100644
+--- a/bpv7/bibe/bibeclo.c
++++ b/bpv7/bibe/bibeclo.c
+@@ -571,7 +571,7 @@ int	main(int argc, char *argv[])
+ 		/*	The encapsulating bundle inherits forwarding
+ 		 *	preferences from the encapsulated bundle,
+ 		 *	except the BIBE and CT requests themselves.
+-		 *	Other ancillary data items are take from the
++		 *	Other ancillary data items are taken from the
+ 		 *	bcla as configured by bibeadmin.		*/
+ 
+ 		ctRequested = ancillaryData.flags & BP_CT_REQUESTED;
+diff --git a/bpv7/utils/bpadmin.c b/bpv7/utils/bpadmin.c
+index 949a56e1..1ce75187 100644
+--- a/bpv7/utils/bpadmin.c
++++ b/bpv7/utils/bpadmin.c
+@@ -1701,15 +1701,13 @@ static int	processLine(char *line, int lineLength, int *rc)
+ 				if (tokenCount > 1)
+ 				{
+ 					executeStart(tokenCount, tokens);
++					return 0;
+ 				}
+-				else
++
++				if (bpStart() < 0)
+ 				{
+-					if (bpStart() < 0)
+-					{
+-						putErrmsg("Can't start BP.",
+-								NULL);
+-						return 0;
+-					}
++					putErrmsg("Can't start BP.", NULL);
++					return 0;
+ 				}
+ 
+ 				/* Wait for bp to start up. */
+diff --git a/ltp/udp/libudplsa.c b/ltp/udp/libudplsa.c
+index 9d57b816..3d791ecb 100644
+--- a/ltp/udp/libudplsa.c
++++ b/ltp/udp/libudplsa.c
+@@ -31,6 +31,7 @@ void	*udplsa_handle_datagrams(void *parm)
+ 
+ 	/*	Initialize recvmmsg buffers.				*/
+ 
++writeMemo("udplsa_handle_datagrams is UDP_MULTISEND.");
+ 	buffers = MTAKE((UDPLSA_BUFSZ + 1)* MULTIRECV_BUFFER_COUNT);
+ 	if (buffers == NULL)
+ 	{
+@@ -146,6 +147,7 @@ void	*udplsa_handle_datagrams(void *parm)
+ 		switch (segmentLength)
+ 		{
+ 		case 0:	/*	Interrupted system call.		*/
++writeMemo("libudplsa irecvfrom is interrupted");
+ 			continue;
+ 
+ 		case -1:
+@@ -155,6 +157,7 @@ void	*udplsa_handle_datagrams(void *parm)
+ 			/*	Intentional fall-through to next case.	*/
+ 
+ 		case 1:				/*	Normal stop.	*/
++writeMemo("libudplsa irecvfrom() receives STOP byte");
+ 			rtp->running = 0;
+ 			continue;
+ 		}
+diff --git a/ltp/udp/udplsi.c b/ltp/udp/udplsi.c
+index 0ed2fa4a..dc1bec7d 100644
+--- a/ltp/udp/udplsi.c
++++ b/ltp/udp/udplsi.c
+@@ -151,15 +151,21 @@ int	main(int argc, char *argv[])
+ 	fd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+ 	if (fd >= 0)
+ 	{
++#if 0
+ 		if (isendto(fd, &quit, 1, 0, &ownSockName,
+ 				sizeof(struct sockaddr)) == 1)
+ 		{
+ 			pthread_join(receiverThread, NULL);
+ 		}
++#endif
+ 
++oK(isendto(fd, &quit, 1, 0, &ownSockName,
++		sizeof(struct sockaddr)));
++microsnooze(10000);
+ 		closesocket(fd);
+ 	}
+ 
++pthread_detach(receiverThread);
+ 	closesocket(rtp.linkSocket);
+ 	writeErrmsgMemos();
+ 	writeMemo("[i] udplsi has ended.");
+diff --git a/ltp/udp/udplso.c b/ltp/udp/udplso.c
+index e1d46aef..53341c82 100644
+--- a/ltp/udp/udplso.c
++++ b/ltp/udp/udplso.c
+@@ -586,15 +586,21 @@ segment batch.", NULL);
+ 	fd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
+ 	if (fd >= 0)
+ 	{
++#if 0
+ 		if (isendto(fd, &quit, 1, 0, &ownSockName,
+ 				sizeof(struct sockaddr)) == 1)
+ 		{
+ 			pthread_join(receiverThread, NULL);
+ 		}
++#endif
+ 
++oK(isendto(fd, &quit, 1, 0, &ownSockName,
++		sizeof(struct sockaddr)));
++microsnooze(10000);
+ 		closesocket(fd);
+ 	}
+ 
++pthread_detach(receiverThread);
+ 	closesocket(rtp.linkSocket);
+ 	writeErrmsgMemos();
+ 	writeMemo("[i] udplso has ended.");
+diff --git a/ltp/utils/ltpadmin.c b/ltp/utils/ltpadmin.c
+index b3c783c1..e4f4d704 100644
+--- a/ltp/utils/ltpadmin.c
++++ b/ltp/utils/ltpadmin.c
+@@ -95,8 +95,10 @@ See man(5) for ltprc.");
+ 	PUTS("\t   m maxbacklog <max block delivery backlog; default is 10>");
+ 	PUTS("\ts\tStart");
+ 	PUTS("\t   s ['<LSI command>']");
++	PUTS("\t   s span <engine ID#>");
+ 	PUTS("\tx\tStop");
+ 	PUTS("\t   x");
++	PUTS("\t   x span <engine ID#>");
+ 	PUTS("\tw\tWatch LTP activity");
+ 	PUTS("\t   w { 0 | 1 | <activity spec> }");
+ 	PUTS("\t\tActivity spec is a string of all requested activity \
+@@ -952,6 +954,7 @@ static int	processLine(char *line, int lineLength, int *checkNeeded,
+ 	char		*cursor;
+ 	int		i;
+ 	char		*tokens[12];
++	uvast		engineId;
+ 	char		lsiCmd[256];
+ 	char		buffer[80];
+ 	struct timeval	done_time;
+@@ -1025,6 +1028,20 @@ static int	processLine(char *line, int lineLength, int *checkNeeded,
+ 			{
+ 				if (tokenCount > 1)
+ 				{
++					if (strcmp(tokens[1], "span") == 0)
++					{
++						if (tokenCount != 3)
++						{
++							SYNTAX_ERROR;
++							return 0;
++						}
++
++						engineId = strtoul(tokens[2],
++								NULL, 0);
++						oK(ltpStartSpan(engineId));
++						return 0;
++					}
++
+ 					patchLsiCmd(tokenCount, tokens, lsiCmd);
+ 					oK(addSeat(lsiCmd));
+ 				}
+@@ -1059,6 +1076,26 @@ up, abandoned.");
+ 		case 'x':
+ 			if (attachToLtp() == 0)
+ 			{
++				if (tokenCount > 1)
++				{
++					if (strcmp(tokens[1], "span") == 0)
++					{
++						if (tokenCount != 3)
++						{
++							SYNTAX_ERROR;
++							return 0;
++						}
++
++						engineId = strtoul(tokens[2],
++								NULL, 0);
++						ltpStopSpan(engineId);
++						return 0;
++					}
++
++					SYNTAX_ERROR;
++					return 0;
++				}
++
+ 				ltpStop();
+ 			}
+ 

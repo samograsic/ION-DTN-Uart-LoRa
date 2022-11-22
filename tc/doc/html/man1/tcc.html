@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<p>tcc - Trusted Collective client daemon task for handling bulletins from a collective authority</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<p><b>tcc</b> <i>blocks_group_number</i></p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p><b>tcc</b> is a background &quot;daemon&quot; task that receives code blocks multicast by the authority nodes of the collective authority for the TC application identified by <i>blocks_group_number</i>. It reassembles bulletins from compatible code blocks and delivers those bulletins to the application&#39;s user function on the local node.</p>
+
+<h1 id="EXIT-STATUS">EXIT STATUS</h1>
+
+<dl>
+
+<dt id="pod0">&quot;0&quot;</dt>
+<dd>
+
+<p><b>tcc</b> terminated, for reasons noted in the <b>ion.log</b> file.</p>
+
+</dd>
+<dt id="pod1">&quot;1&quot;</dt>
+<dd>
+
+<p><b>tcc</b> was unable to attach to TC client operations, possibly because the TC client database for this application has not yet been initialized by <b>tcaadmin</b>.</p>
+
+</dd>
+</dl>
+
+<h1 id="FILES">FILES</h1>
+
+<p>No configuration files are needed.</p>
+
+<h1 id="ENVIRONMENT">ENVIRONMENT</h1>
+
+<p>No environment variables apply.</p>
+
+<h1 id="DIAGNOSTICS">DIAGNOSTICS</h1>
+
+<p>The following diagnostics may be issued to the <b>ion.log</b> log file:</p>
+
+<dl>
+
+<dt id="tcc-cant-attach-to-tcc-system">tcc can&#39;t attach to tcc system.</dt>
+<dd>
+
+<p><b>tcaadmin</b> has not yet initialized the TC client database for this application.</p>
+
+</dd>
+</dl>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>Report bugs to &lt;ion-dtn-support@lists.sourceforge.net&gt;</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>tcaadmin(1), tccrc(5)</p>
+
+
+</body>
+
+</html>
+
+

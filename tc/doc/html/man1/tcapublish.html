@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body>
+
+
+
+<h1 id="NAME">NAME</h1>
+
+<p>tcapublish - Trusted Collective authority task that publishes consensus critical information bulletins</p>
+
+<h1 id="SYNOPSIS">SYNOPSIS</h1>
+
+<p><b>tcapublish</b> <i>blocks_group_number</i></p>
+
+<h1 id="DESCRIPTION">DESCRIPTION</h1>
+
+<p><b>tcapublish</b> is a background task that completes the processing of a single iteration of the bulletin publication cycle for the collective authority function of the TC application identified by <i>blocks_group_number</i> on the local node. To do so, it receives proposed bulletins multicast by <b>tcacompile</b> daemons, resolves differences among the received bulletins to arrive at a consensus bulletin, computes a hash for the consensus bulletin, erasure-codes the consensus bulletin, and multicasts that subset of the resulting code blocks that is allocated to the local node according to the local node&#39;s assigned position in the authority array of the application&#39;s collective authority. It is spawned automatically by the local node&#39;s <b>tcacompile</b> daemon for the indicated application, at the time that daemon publishes its own proposed bulletin for this iteration of the bulletin compilation cycle; it terminates immediately after it has finished publishing code blocks.</p>
+
+<h1 id="EXIT-STATUS">EXIT STATUS</h1>
+
+<dl>
+
+<dt id="pod0">&quot;0&quot;</dt>
+<dd>
+
+<p><b>tcapublish</b> terminated, for reasons noted in the <b>ion.log</b> file.</p>
+
+</dd>
+<dt id="pod1">&quot;1&quot;</dt>
+<dd>
+
+<p><b>tcapublish</b> was unable to attach to TC authority operations, probably because <b>tcaadmin</b> has not yet been run.</p>
+
+</dd>
+</dl>
+
+<h1 id="FILES">FILES</h1>
+
+<p>No configuration files are needed.</p>
+
+<h1 id="ENVIRONMENT">ENVIRONMENT</h1>
+
+<p>No environment variables apply.</p>
+
+<h1 id="DIAGNOSTICS">DIAGNOSTICS</h1>
+
+<p>The following diagnostics may be issued to the <b>ion.log</b> log file:</p>
+
+<dl>
+
+<dt id="tcapublish-cant-attach-to-DTKA">tcapublish can&#39;t attach to DTKA.</dt>
+<dd>
+
+<p><b>tcaadmin</b> has not yet initialized the authority database for this TC application.</p>
+
+</dd>
+</dl>
+
+<h1 id="BUGS">BUGS</h1>
+
+<p>Report bugs to &lt;ion-dtn-support@lists.sourceforge.net&gt;</p>
+
+<h1 id="SEE-ALSO">SEE ALSO</h1>
+
+<p>tcaadmin(1), tc(3), tcauthrc(5)</p>
+
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,93 @@
+[2022/08/14-19:03:36] [i] rfxclock is running.
+[2022/08/14-19:03:36] [i] Span to engine 2 (max BER 0.000100, max xmit segment size 1200, max recv segment size 1): xmit segment loss rate 0.617186, recv segment loss rate 0.000800, max timeouts 29.
+[2022/08/14-19:03:36] [i] Span to engine 3 (max BER 0.000100, max xmit segment size 1200, max recv segment size 1): xmit segment loss rate 0.617186, recv segment loss rate 0.000800, max timeouts 29.
+[2022/08/14-19:03:36] [i] This node deploys bundle protocol version 7.
+[2022/08/14-19:03:36] [i] No congestion forecast; horizon reached.
+[2022/08/14-19:03:36] [i] ionwarn finished.
+[2022/08/14-19:03:36] [i] Total max export sessions does not exceed estimate.
+[2022/08/14-19:03:36] Stopping ltpadmin.
+[2022/08/14-19:03:36] [i] Bundle security is enabled.
+[2022/08/14-19:03:36] [i] ltpmeter is running.
+[2022/08/14-19:03:36] [i] ltpclock is running.
+[2022/08/14-19:03:36] [i] udplso is running, spec=[127.0.0.1:0], rengine=2.
+[2022/08/14-19:03:36] [i] udplsi is running, spec=[127.0.0.1:2112].
+[2022/08/14-19:03:36] [i] ltpdeliv is running.
+[2022/08/14-19:03:36] [i] udplso is running, spec=[127.0.0.1:0], rengine=3.
+[2022/08/14-19:03:36] [i] ltpmeter is running.
+[2022/08/14-19:03:36] [i] bpclm is running: ipn:2.0
+[2022/08/14-19:03:36] [i] bpclm is running: ipn:3.0
+[2022/08/14-19:03:37] Stopping bpadmin.
+[2022/08/14-19:03:37] [i] Not configured for multicast; cpsd stopping.
+[2022/08/14-19:03:37] [i] bpclock is running.
+[2022/08/14-19:03:37] [i] bptransit is running.
+[2022/08/14-19:03:37] [i] Not configured for IRF; irfd stopping: ipn:2.271
+[2022/08/14-19:03:37] [i] ipnadminep is running.
+[2022/08/14-19:03:37] [i] ltpcli is running.
+[2022/08/14-19:03:37] [i] ltpclo is running.
+[2022/08/14-19:03:37] [i] ltpclo is running.
+[2022/08/14-19:03:37] [i] ipnfw is running.
+[2022/08/14-19:03:37] [i] No congestion forecast; horizon reached.
+[2022/08/14-19:03:37] [i] ionwarn finished.
+[2022/08/14-19:03:38] [i] No congestion forecast; horizon reached.
+[2022/08/14-19:03:38] [i] ionwarn finished.
+[2022/08/14-19:03:38] [x] src from 1969/12/31-16:00:00 to 2022/08/14-19:03:38: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:03:38] [x] fwd from 1969/12/31-16:00:00 to 2022/08/14-19:03:38: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:03:38] [x] xmt from 1969/12/31-16:00:00 to 2022/08/14-19:03:38: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:03:38] [x] rcv from 1969/12/31-16:00:00 to 2022/08/14-19:03:38: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:03:38] [x] dlv from 1969/12/31-16:00:00 to 2022/08/14-19:03:38: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:03:38] [x] rfw from 1969/12/31-16:00:00 to 2022/08/14-19:03:38: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:03:38] [x] exp from 1969/12/31-16:00:00 to 2022/08/14-19:03:38: (0) 0 0 (1) 0 0 (2) 0 0 (+) 0 0
+[2022/08/14-19:03:39] [i] bpsendfile is running.
+[2022/08/14-19:03:39] [i] bpsendfile is sending 'shakespeare1', size 1032600.
+[2022/08/14-19:03:39] [i] bpsendfile sent 'shakespeare1', size 1032600.
+[2022/08/14-19:03:39] [i] bpsendfile has stopped.
+[2022/08/14-19:03:39] [i] bpsendfile is running.
+[2022/08/14-19:03:39] [i] bpsendfile is sending 'shakespeare2', size 1074409.
+[2022/08/14-19:03:39] [i] bpsendfile sent 'shakespeare2', size 1074409.
+[2022/08/14-19:03:39] [i] bpsendfile has stopped.
+[2022/08/14-19:03:39] [i] bpsendfile is running.
+[2022/08/14-19:03:39] [i] bpsendfile is sending 'shakespeare3', size 1054093.
+[2022/08/14-19:03:39] [i] bpsendfile sent 'shakespeare3', size 1054093.
+[2022/08/14-19:03:39] [i] bpsendfile has stopped.
+[2022/08/14-19:03:39] [i] bpsendfile is running.
+[2022/08/14-19:03:39] [i] bpsendfile is sending 'shakespeare4', size 1068064.
+[2022/08/14-19:03:39] [i] bpsendfile sent 'shakespeare4', size 1068064.
+[2022/08/14-19:03:39] [i] bpsendfile has stopped.
+[2022/08/14-19:07:43] [?] Client access terminated.
+[2022/08/14-19:07:43] [i] LTP meter to engine 2 is stopped.
+[2022/08/14-19:07:43] at line 278 of ../ltp/ltpcli.c, Can't get LTP notice.
+[2022/08/14-19:07:43] [i] ltpmeter has ended.
+[2022/08/14-19:07:43] [i] ltpdeliv has ended.
+[2022/08/14-19:07:43] [i] ltpcli receiver thread has ended.
+[2022/08/14-19:07:43] [i] LSO to engine 2 is stopped.
+[2022/08/14-19:07:43] libudplsa irecvfrom() receives STOP byte
+[2022/08/14-19:07:43] [i] LTP meter to engine 3 is stopped.
+[2022/08/14-19:07:43] [i] ltpmeter has ended.
+[2022/08/14-19:07:43] [i] udplsa receiver thread has ended.
+[2022/08/14-19:07:43] [i] LSO to engine 3 is stopped.
+[2022/08/14-19:07:43] libudplsa irecvfrom() receives STOP byte
+[2022/08/14-19:07:43] [i] udplsa receiver thread has ended.
+[2022/08/14-19:07:43] [i] ltpclock has ended.
+[2022/08/14-19:07:43] [i] ltpcli duct has ended.
+[2022/08/14-19:07:43] libudplsa irecvfrom() receives STOP byte
+[2022/08/14-19:07:43] [i] udplsa receiver thread has ended.
+[2022/08/14-19:07:43] [i] udplso has ended.
+[2022/08/14-19:07:43] [i] udplsi has ended.
+[2022/08/14-19:07:43] [i] udplso has ended.
+[2022/08/14-19:07:44] [i] ipnfw forwarder has ended.
+[2022/08/14-19:07:44] [i] Endpoint has been stopped.
+[2022/08/14-19:07:44] [i] bptransit has ended.
+[2022/08/14-19:07:44] [i] Administrative endpoint terminated.
+[2022/08/14-19:07:44] [i] ipnadminep has ended.
+[2022/08/14-19:07:44] [i] Outduct has been stopped: 3
+[2022/08/14-19:07:44] [i] ltpclo outduct closed.
+[2022/08/14-19:07:44] [i] Plan has been stopped: ipn:2.0
+[2022/08/14-19:07:44] [i] ltpclo duct has ended.
+[2022/08/14-19:07:44] [i] bpclm has ended: ipn:2.0
+[2022/08/14-19:07:44] [i] Plan has been stopped: ipn:3.0
+[2022/08/14-19:07:44] [i] Outduct has been stopped: 2
+[2022/08/14-19:07:44] [i] bpclock has ended.
+[2022/08/14-19:07:44] [i] ltpclo outduct closed.
+[2022/08/14-19:07:44] [i] bpclm has ended: ipn:3.0
+[2022/08/14-19:07:44] [i] ltpclo duct has ended.
+[2022/08/14-19:07:46] [i] rfxclock has ended.

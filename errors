@@ -1,0 +1,1260 @@
+gmake -C ici all
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/ici'
+cd doc; \
+	mkdir -p man; \
+	mkdir -p man/man1; \
+	mkdir -p man/man3; \
+	mkdir -p man/man5; \
+	mkdir -p html; \
+	mkdir -p html/man1; \
+	mkdir -p html/man3; \
+	mkdir -p html/man5; \
+	gmake all ROOT=/usr/local; \
+	cd ..; \
+	cd libbloom-master; \
+	gmake all MM=; \
+	cd ..; \
+	for PF in i86_64-fedora;\
+		do \
+			cd $PF; \
+			mkdir -p bin; \
+			mkdir -p lib; \
+			gmake all ROOT=/usr/local PTRS=0; \
+			cd ..; \
+		done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ici/doc'
+pod2man -s 1 -c "ICI executables" pod1/ionadmin.pod man/man1/ionadmin.1
+pod2man -s 1 -c "ICI executables" pod1/ionsecadmin.pod man/man1/ionsecadmin.1
+pod2man -s 1 -c "ICI executables" pod1/rfxclock.pod man/man1/rfxclock.1
+pod2man -s 1 -c "ICI executables" pod1/psmwatch.pod man/man1/psmwatch.1
+pod2man -s 1 -c "ICI executables" pod1/sdrwatch.pod man/man1/sdrwatch.1
+pod2man -s 1 -c "ICI executables" pod1/sdrmend.pod man/man1/sdrmend.1
+pod2man -s 1 -c "ICI executables" pod1/ionunlock.pod man/man1/ionunlock.1
+pod2man -s 1 -c "ICI executables" pod1/ionxnowner.pod man/man1/ionxnowner.1
+pod2man -s 1 -c "ICI executables" pod1/ionlog.pod man/man1/ionlog.1
+pod2man -s 1 -c "ICI executables" pod1/file2sdr.pod man/man1/file2sdr.1
+pod2man -s 1 -c "ICI executables" pod1/file2sm.pod man/man1/file2sm.1
+pod2man -s 1 -c "ICI executables" pod1/psmshell.pod man/man1/psmshell.1
+pod2man -s 1 -c "ICI executables" pod1/sdr2file.pod man/man1/sdr2file.1
+pod2man -s 1 -c "ICI executables" pod1/sm2file.pod man/man1/sm2file.1
+pod2man -s 1 -c "ICI executables" pod1/smlistsh.pod man/man1/smlistsh.1
+pod2man -s 1 -c "ICI executables" pod1/smrbtsh.pod man/man1/smrbtsh.1
+pod2man -s 1 -c "ICI executables" pod1/owltsim.pod man/man1/owltsim.1
+pod2man -s 1 -c "ICI executables" pod1/owlttb.pod man/man1/owlttb.1
+pod2man -s 5 -c "ICI configuration files" pod5/ionconfig.pod man/man5/ionconfig.5
+pod2man -s 5 -c "ICI configuration files" pod5/ionrc.pod man/man5/ionrc.5
+pod2man -s 5 -c "ICI configuration files" pod5/ionsecrc.pod man/man5/ionsecrc.5
+pod2man -s 3 -c "ICI library functions" pod3/platform.pod man/man3/platform.3
+pod2man -s 3 -c "ICI library functions" pod3/memmgr.pod man/man3/memmgr.3
+pod2man -s 3 -c "ICI library functions" pod3/ion.pod man/man3/ion.3
+pod2man -s 3 -c "ICI library functions" pod3/llcv.pod man/man3/llcv.3
+pod2man -s 3 -c "ICI library functions" pod3/lyst.pod man/man3/lyst.3
+pod2man -s 3 -c "ICI library functions" pod3/ioncbor.pod man/man3/ioncbor.3
+pod2man -s 3 -c "ICI library functions" pod3/ioncrc.pod man/man3/ioncrc.3
+pod2man -s 3 -c "ICI library functions" pod3/psm.pod man/man3/psm.3
+pod2man -s 3 -c "ICI library functions" pod3/zco.pod man/man3/zco.3
+pod2man -s 3 -c "ICI library functions" pod3/smlist.pod man/man3/smlist.3
+pod2man -s 3 -c "ICI library functions" pod3/smrbt.pod man/man3/smrbt.3
+pod2man -s 3 -c "ICI library functions" pod3/sdrlist.pod man/man3/sdrlist.3
+pod2man -s 3 -c "ICI library functions" pod3/sdrstring.pod man/man3/sdrstring.3
+pod2man -s 3 -c "ICI library functions" pod3/sdrtable.pod man/man3/sdrtable.3
+pod2man -s 3 -c "ICI library functions" pod3/sdrhash.pod man/man3/sdrhash.3
+pod2man -s 3 -c "ICI library functions" pod3/sdr.pod man/man3/sdr.3
+pod2html --noindex --infile=pod1/ionadmin.pod --outfile=html/man1/ionadmin.html
+pod2html --noindex --infile=pod1/ionsecadmin.pod --outfile=html/man1/ionsecadmin.html
+pod2html --noindex --infile=pod1/rfxclock.pod --outfile=html/man1/rfxclock.html
+pod2html --noindex --infile=pod1/psmwatch.pod --outfile=html/man1/psmwatch.html
+pod2html --noindex --infile=pod1/sdrwatch.pod --outfile=html/man1/sdrwatch.html
+pod2html --noindex --infile=pod1/sdrmend.pod --outfile=html/man1/sdrmend.html
+pod2html --noindex --infile=pod1/ionunlock.pod --outfile=html/man1/ionunlock.html
+pod2html --noindex --infile=pod1/ionxnowner.pod --outfile=html/man1/ionxnowner.html
+pod2html --noindex --infile=pod1/ionlog.pod --outfile=html/man1/ionlog.html
+pod2html --noindex --infile=pod1/file2sdr.pod --outfile=html/man1/file2sdr.html
+pod2html --noindex --infile=pod1/file2sm.pod --outfile=html/man1/file2sm.html
+pod2html --noindex --infile=pod1/psmshell.pod --outfile=html/man1/psmshell.html
+pod2html --noindex --infile=pod1/sdr2file.pod --outfile=html/man1/sdr2file.html
+pod2html --noindex --infile=pod1/sm2file.pod --outfile=html/man1/sm2file.html
+pod2html --noindex --infile=pod1/smlistsh.pod --outfile=html/man1/smlistsh.html
+pod2html --noindex --infile=pod1/smrbtsh.pod --outfile=html/man1/smrbtsh.html
+pod2html --noindex --infile=pod1/owltsim.pod --outfile=html/man1/owltsim.html
+pod2html --noindex --infile=pod1/owlttb.pod --outfile=html/man1/owlttb.html
+pod2html --noindex --infile=pod5/ionconfig.pod --outfile=html/man5/ionconfig.html
+pod2html --noindex --infile=pod5/ionrc.pod --outfile=html/man5/ionrc.html
+pod2html --noindex --infile=pod5/ionsecrc.pod --outfile=html/man5/ionsecrc.html
+pod2html --noindex --infile=pod3/platform.pod --outfile=html/man3/platform.html
+pod2html --noindex --infile=pod3/memmgr.pod --outfile=html/man3/memmgr.html
+pod2html --noindex --infile=pod3/ion.pod --outfile=html/man3/ion.html
+pod2html --noindex --infile=pod3/llcv.pod --outfile=html/man3/llcv.html
+pod2html --noindex --infile=pod3/lyst.pod --outfile=html/man3/lyst.html
+pod2html --noindex --infile=pod3/ioncbor.pod --outfile=html/man3/ioncbor.html
+pod2html --noindex --infile=pod3/ioncrc.pod --outfile=html/man3/ioncrc.html
+pod2html --noindex --infile=pod3/psm.pod --outfile=html/man3/psm.html
+pod2html --noindex --infile=pod3/zco.pod --outfile=html/man3/zco.html
+pod2html --noindex --infile=pod3/smlist.pod --outfile=html/man3/smlist.html
+pod2html --noindex --infile=pod3/smrbt.pod --outfile=html/man3/smrbt.html
+pod2html --noindex --infile=pod3/sdrlist.pod --outfile=html/man3/sdrlist.html
+pod2html --noindex --infile=pod3/sdrstring.pod --outfile=html/man3/sdrstring.html
+pod2html --noindex --infile=pod3/sdrtable.pod --outfile=html/man3/sdrtable.html
+pod2html --noindex --infile=pod3/sdrhash.pod --outfile=html/man3/sdrhash.html
+pod2html --noindex --infile=pod3/sdr.pod --outfile=html/man3/sdr.html
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ici/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ici/libbloom-master'
+mkdir -p /home/scott/ion-dtn-code/ici/libbloom-master/build
+gcc -Wall -O3  -std=c99 -fPIC -I/home/scott/ion-dtn-code/ici/libbloom-master -I/home/scott/ion-dtn-code/ici/libbloom-master/murmur2 -c murmur2/MurmurHash2.c -o /home/scott/ion-dtn-code/ici/libbloom-master/build/murmurhash2.o
+mkdir -p /home/scott/ion-dtn-code/ici/libbloom-master/build
+gcc -Wall -O3  -std=c99 -fPIC -I/home/scott/ion-dtn-code/ici/libbloom-master -I/home/scott/ion-dtn-code/ici/libbloom-master/murmur2 -c bloom.c -o /home/scott/ion-dtn-code/ici/libbloom-master/build/bloom.o
+(cd /home/scott/ion-dtn-code/ici/libbloom-master/build && gcc -Wall -O3  -std=c99 -fPIC bloom.o murmurhash2.o -shared -lm  -o libbloom.so)
+mkdir -p /home/scott/ion-dtn-code/ici/libbloom-master/build
+gcc -Wall -O3  -std=c99 -fPIC -I/home/scott/ion-dtn-code/ici/libbloom-master -I/home/scott/ion-dtn-code/ici/libbloom-master/murmur2 -c test.c -o /home/scott/ion-dtn-code/ici/libbloom-master/build/test.o
+(cd /home/scott/ion-dtn-code/ici/libbloom-master/build && gcc -Wall -O3  -std=c99 -fPIC test.o -L/home/scott/ion-dtn-code/ici/libbloom-master/build -Wl,-rpath,/home/scott/ion-dtn-code/ici/libbloom-master/build -lbloom -o test-libbloom)
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ici/libbloom-master'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ici/i86_64-fedora'
+rm -f *.o
+touch check
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/llcv.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/platform.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/platform_sm.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/memmgr.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/lyst.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/psm.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/smlist.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/smrbt.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/radix.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/sptrace.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/ion.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/rfx.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/ionsec.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../crypto/NULL_SUITES/crypto.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../crypto/NULL_SUITES/csi.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/crc.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/cbor.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../bulk/STUB_BULK/bulk.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/zco.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../sdr/sdrxn.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../sdr/sdrmgt.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../sdr/sdrstring.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../sdr/sdrlist.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../sdr/sdrtable.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../sdr/sdrhash.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../sdr/sdrcatlg.c
+gcc -fPIC -shared -o libici.so llcv.o platform.o platform_sm.o memmgr.o lyst.o psm.o smlist.o smrbt.o radix.o sptrace.o ion.o rfx.o ionsec.o crypto.o csi.o crc.o cbor.o bulk.o zco.o sdrxn.o sdrmgt.o sdrstring.o sdrlist.o sdrtable.o sdrhash.o sdrcatlg.o
+cp libici.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../library/libicinm.c
+gcc -fPIC -shared -o libicinm.so libicinm.o
+cp libicinm.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../daemon/rfxclock.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -I. -o rfxclock rfxclock.o -L./lib -lici -lpthread -lm
+cp rfxclock ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../utils/sdrwatch.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o sdrwatch sdrwatch.o -L./lib -lici -lpthread -lm
+cp sdrwatch ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../utils/psmwatch.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o psmwatch psmwatch.o -L./lib -lici -lpthread -lm
+cp psmwatch ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../utils/ionadmin.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o ionadmin ionadmin.o -L./lib -lici -lpthread -lm
+cp ionadmin ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../utils/ionsecadmin.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o ionsecadmin ionsecadmin.o -L./lib -lici -lpthread -lm
+cp ionsecadmin ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../utils/sdrmend.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o sdrmend sdrmend.o -L./lib -lici -lpthread -lm
+cp sdrmend ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../utils/ionwarn.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o ionwarn ionwarn.o -L./lib -lici -lpthread -lm
+cp ionwarn ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../utils/ionunlock.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o ionunlock ionunlock.o -L./lib -lici -lpthread -lm
+cp ionunlock ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../utils/ionxnowner.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o ionxnowner ionxnowner.o -L./lib -lici -lpthread -lm
+cp ionxnowner ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../utils/ionlog.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o ionlog ionlog.o -L./lib -lici -lpthread -lm
+cp ionlog ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../test/file2sm.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -I. -o file2sm file2sm.o -L./lib -lici -lpthread -lm
+cp file2sm ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../test/sm2file.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -I. -o sm2file sm2file.o -L./lib -lici -lpthread -lm
+cp sm2file ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../test/file2sdr.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -I. -o file2sdr file2sdr.o -L./lib -lici -lpthread -lm
+cp file2sdr ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../test/sdr2file.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o sdr2file sdr2file.o -L./lib -lici -lpthread -lm
+cp sdr2file ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../test/psmshell.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o psmshell psmshell.o -L./lib -lici -lpthread -lm
+cp psmshell ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../test/smlistsh.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o smlistsh smlistsh.o -L./lib -lici -lpthread -lm
+cp smlistsh ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../test/smrbtsh.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o smrbtsh smrbtsh.o -L./lib -lici -lpthread -lm
+cp smrbtsh ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../test/owltsim.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o owltsim owltsim.o -L./lib -lici -lpthread -lm
+cp owltsim ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -c ../test/owlttb.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../sdr -I../include -I../crypto -o owlttb owlttb.o -L./lib -lici -lpthread -lm
+cp owlttb ./bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ici/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/ici'
+gmake -C ici install
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/ici'
+cd doc; \
+	gmake -i install ROOT=/usr/local; \
+	cd ..; \
+	cd libbloom-master; \
+	gmake -i install ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora;\
+		do cd $PF; gmake -i install ROOT=/usr/local; cd ..; done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ici/doc'
+cp man/man1/*.1 /usr/local/man/man1
+cp man/man3/*.3 /usr/local/man/man3
+cp man/man5/*.5 /usr/local/man/man5
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ici/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ici/libbloom-master'
+cp bloom.h /usr/local/include
+cp build/*.so /usr/local/lib
+cp build/test-libbloom /usr/local/bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ici/libbloom-master'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ici/i86_64-fedora'
+cp ../include/*.h /usr/local/include
+cp lib/* /usr/local/lib
+cp bin/* /usr/local/bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ici/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/ici'
+gmake -C ltp all
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/ltp'
+cd doc; \
+	mkdir -p man; \
+	mkdir -p man/man1; \
+	mkdir -p man/man3; \
+	mkdir -p man/man5; \
+	mkdir -p html; \
+	mkdir -p html/man1; \
+	mkdir -p html/man3; \
+	mkdir -p html/man5; \
+	gmake all ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do \
+			cd $PF; \
+			mkdir -p bin; \
+			mkdir -p lib; \
+			gmake all ROOT=/usr/local PTRS=0; \
+			cd ..; \
+		done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ltp/doc'
+pod2man -s 1 -c "LTP executables" pod1/ltpadmin.pod man/man1/ltpadmin.1
+pod2man -s 1 -c "LTP executables" pod1/ltpsecadmin.pod man/man1/ltpsecadmin.1
+pod2man -s 1 -c "LTP executables" pod1/ltpclock.pod man/man1/ltpclock.1
+pod2man -s 1 -c "LTP executables" pod1/ltpcounter.pod man/man1/ltpcounter.1
+pod2man -s 1 -c "LTP executables" pod1/ltpdriver.pod man/man1/ltpdriver.1
+pod2man -s 1 -c "LTP executables" pod1/ltpmeter.pod man/man1/ltpmeter.1
+pod2man -s 1 -c "LTP executables" pod1/sdatest.pod man/man1/sdatest.1
+pod2man -s 1 -c "LTP executables" pod1/udplsi.pod man/man1/udplsi.1
+pod2man -s 1 -c "LTP executables" pod1/udplso.pod man/man1/udplso.1
+pod2man -s 1 -c "LTP executables" pod1/dccplsi.pod man/man1/dccplsi.1
+pod2man -s 1 -c "LTP executables" pod1/dccplso.pod man/man1/dccplso.1
+pod2man -s 5 -c "LTP configuration files" pod5/ltprc.pod man/man5/ltprc.5
+pod2man -s 5 -c "LTP configuration files" pod5/ltpsecrc.pod man/man5/ltpsecrc.5
+pod2man -s 3 -c "LTP library functions" pod3/ltp.pod man/man3/ltp.3
+pod2man -s 3 -c "LTP library functions" pod3/sda.pod man/man3/sda.3
+pod2html --noindex --infile=pod1/ltpadmin.pod --outfile=html/man1/ltpadmin.html
+pod2html --noindex --infile=pod1/ltpsecadmin.pod --outfile=html/man1/ltpsecadmin.html
+pod2html --noindex --infile=pod1/ltpclock.pod --outfile=html/man1/ltpclock.html
+pod2html --noindex --infile=pod1/ltpcounter.pod --outfile=html/man1/ltpcounter.html
+pod2html --noindex --infile=pod1/ltpdriver.pod --outfile=html/man1/ltpdriver.html
+pod2html --noindex --infile=pod1/ltpmeter.pod --outfile=html/man1/ltpmeter.html
+pod2html --noindex --infile=pod1/sdatest.pod --outfile=html/man1/sdatest.html
+pod2html --noindex --infile=pod1/udplsi.pod --outfile=html/man1/udplsi.html
+pod2html --noindex --infile=pod1/udplso.pod --outfile=html/man1/udplso.html
+pod2html --noindex --infile=pod1/dccplsi.pod --outfile=html/man1/dccplsi.html
+pod2html --noindex --infile=pod1/dccplso.pod --outfile=html/man1/dccplso.html
+pod2html --noindex --infile=pod5/ltprc.pod --outfile=html/man5/ltprc.html
+pod2html --noindex --infile=pod5/ltpsecrc.pod --outfile=html/man5/ltpsecrc.html
+pod2html --noindex --infile=pod3/ltp.pod --outfile=html/man3/ltp.html
+pod2html --noindex --infile=pod3/sda.pod --outfile=html/man3/sda.html
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ltp/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ltp/i86_64-fedora'
+rm -f *.o
+touch check
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../library/libltp.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../library/libltpP.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../library/ltpsec.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../library/ltpei.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../library/ext/auth/auth.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../library/libltpnm.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../sda/libsda.c
+gcc -fPIC -shared -o libltp.so libltp.o libltpP.o ltpsec.o ltpei.o auth.o libltpnm.o libsda.o
+cp libltp.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../utils/ltpadmin.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -o ltpadmin ltpadmin.o -L./lib -L/usr/local/lib -lltp -lici -lpthread -lm
+cp ltpadmin ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../utils/ltpsecadmin.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -o ltpsecadmin ltpsecadmin.o -L./lib -L/usr/local/lib -lltp -lici -lpthread -lm
+cp ltpsecadmin ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../daemon/ltpclock.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -o ltpclock ltpclock.o -L./lib -L/usr/local/lib -lltp -lici -lpthread -lm
+cp ltpclock ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../daemon/ltpdeliv.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -o ltpdeliv ltpdeliv.o -L./lib -L/usr/local/lib -lltp -lici -lpthread -lm
+cp ltpdeliv ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../daemon/ltpmeter.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -o ltpmeter ltpmeter.o -L./lib -L/usr/local/lib -lltp -lici -lpthread -lm
+cp ltpmeter ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../udp/udplsi.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../udp/libudplsa.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -o udplsi udplsi.o libudplsa.o -L./lib -L/usr/local/lib -lltp -lici -lpthread -lm
+cp udplsi ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../udp/udplso.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -o udplso udplso.o libudplsa.o -L./lib -L/usr/local/lib -lltp -lici -lpthread -lm
+cp udplso ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../test/ltpdriver.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -o ltpdriver ltpdriver.o -L./lib -L/usr/local/lib -lltp -lici -lpthread -lm
+cp ltpdriver ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../test/ltpcounter.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -o ltpcounter ltpcounter.o -L./lib -L/usr/local/lib -lltp -lici -lpthread -lm
+cp ltpcounter ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -c ../test/sdatest.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../library/ext -I../library/ext/auth -I../include -I/usr/local/include -o sdatest sdatest.o -L./lib -L/usr/local/lib -lltp -lici -lpthread -lm
+cp sdatest ./bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ltp/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/ltp'
+gmake -C ltp install
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/ltp'
+cd doc; \
+	gmake -i install ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do cd $PF; gmake -i install ROOT=/usr/local; cd ..; done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ltp/doc'
+cp man/man1/*.1 /usr/local/man/man1
+cp man/man3/*.3 /usr/local/man/man3
+cp man/man5/*.5 /usr/local/man/man5
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ltp/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ltp/i86_64-fedora'
+cp ../include/* /usr/local/include
+cp lib/* /usr/local/lib
+cp bin/* /usr/local/bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ltp/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/ltp'
+gmake -C dgr all
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/dgr'
+cd doc; \
+	mkdir -p man; \
+	mkdir -p man/man1; \
+	mkdir -p man/man3; \
+	mkdir -p html; \
+	mkdir -p html/man1; \
+	mkdir -p html/man3; \
+	gmake all ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do \
+			cd $PF; \
+			mkdir -p bin; \
+			mkdir -p lib; \
+			gmake all ROOT=/usr/local PTRS=0; \
+			cd ..; \
+		done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/dgr/doc'
+pod2man -s 1 -c "DGR executables" pod1/dgr2file.pod man/man1/dgr2file.1
+pod2man -s 1 -c "DGR executables" pod1/file2dgr.pod man/man1/file2dgr.1
+pod2man -s 3 -c "DGR library functions" pod3/dgr.pod man/man3/dgr.3
+pod2html --noindex --infile=pod1/dgr2file.pod --outfile=html/man1/dgr2file.html
+pod2html --noindex --infile=pod1/file2dgr.pod --outfile=html/man1/file2dgr.html
+pod2html --noindex --infile=pod3/dgr.pod --outfile=html/man3/dgr.html
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/dgr/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/dgr/i86_64-fedora'
+rm -f *.o
+touch check
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../library/libdgr.c
+gcc -fPIC -shared -o libdgr.so libdgr.o
+cp libdgr.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../test/file2dgr.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -o file2dgr file2dgr.o -L./lib -L/usr/local/lib -ldgr -lici -lpthread -lm
+cp file2dgr ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../test/dgr2file.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -o dgr2file dgr2file.o -L./lib -L/usr/local/lib -ldgr -lici -lpthread -lm
+cp dgr2file ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../test/file2tcp.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -o file2tcp file2tcp.o -L/usr/local/lib -L./lib -lici -lpthread -lm
+cp file2tcp ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../test/tcp2file.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -o tcp2file tcp2file.o -L/usr/local/lib -L./lib -lici -lpthread -lm
+cp tcp2file ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../test/file2udp.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -o file2udp file2udp.o -L/usr/local/lib -L./lib -lici -lpthread -lm
+cp file2udp ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../test/udp2file.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -o udp2file udp2file.o -L/usr/local/lib -L./lib -lici -lpthread -lm
+cp udp2file ./bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/dgr/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/dgr'
+gmake -C dgr install
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/dgr'
+cd doc; \
+	gmake -i install ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do cd $PF; gmake -i install ROOT=/usr/local; cd ..; done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/dgr/doc'
+cp man/man1/*.1 /usr/local/man/man1
+cp man/man3/*.3 /usr/local/man/man3
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/dgr/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/dgr/i86_64-fedora'
+cp ../include/* /usr/local/include
+cp lib/* /usr/local/lib
+cp bin/* /usr/local/bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/dgr/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/dgr'
+gmake -C bssp all
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/bssp'
+cd doc; \
+	mkdir -p man; \
+	mkdir -p man/man1; \
+	mkdir -p man/man3; \
+	mkdir -p man/man5; \
+	mkdir -p html; \
+	mkdir -p html/man1; \
+	mkdir -p html/man3; \
+	mkdir -p html/man5; \
+	gmake all ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do \
+			cd $PF; \
+			mkdir -p bin; \
+			mkdir -p lib; \
+			gmake all ROOT=/usr/local PTRS=0; \
+			cd ..; \
+		done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/bssp/doc'
+pod2man -s 1 -c "BSSP executables" pod1/bsspadmin.pod man/man1/bsspadmin.1
+pod2man -s 1 -c "BSSP executables" pod1/bsspclock.pod man/man1/bsspclock.1
+pod2man -s 1 -c "BSSP executables" pod1/udpbsi.pod man/man1/udpbsi.1
+pod2man -s 1 -c "BSSP executables" pod1/udpbso.pod man/man1/udpbso.1
+pod2man -s 1 -c "BSSP executables" pod1/tcpbsi.pod man/man1/tcpbsi.1
+pod2man -s 1 -c "BSSP executables" pod1/tcpbso.pod man/man1/tcpbso.1
+pod2man -s 5 -c "BSSP configuration files" pod5/bssprc.pod man/man5/bssprc.5
+pod2man -s 3 -c "BSSP library functions" pod3/bssp.pod man/man3/bssp.3
+pod2html --noindex --infile=pod1/bsspadmin.pod --outfile=html/man1/bsspadmin.html
+pod2html --noindex --infile=pod1/bsspclock.pod --outfile=html/man1/bsspclock.html
+pod2html --noindex --infile=pod1/udpbsi.pod --outfile=html/man1/udpbsi.html
+pod2html --noindex --infile=pod1/udpbso.pod --outfile=html/man1/udpbso.html
+pod2html --noindex --infile=pod1/tcpbsi.pod --outfile=html/man1/tcpbsi.html
+pod2html --noindex --infile=pod1/tcpbso.pod --outfile=html/man1/tcpbso.html
+pod2html --noindex --infile=pod5/bssprc.pod --outfile=html/man5/bssprc.html
+pod2html --noindex --infile=pod3/bssp.pod --outfile=html/man3/bssp.html
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/bssp/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/bssp/i86_64-fedora'
+rm -f *.o
+touch check
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -c ../library/libbsspP.c
+gcc -fPIC -shared -o libbsspP.so libbsspP.o
+cp libbsspP.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -c ../library/libbssp.c
+gcc -fPIC -shared -o libbssp.so libbssp.o
+cp libbssp.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -c ../tcp/libtcpbsa.c
+gcc -fPIC -shared -o libtcpbsa.so libtcpbsa.o
+cp libtcpbsa.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -c ../utils/bsspadmin.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -o bsspadmin bsspadmin.o -L./lib -L/usr/local/lib -lbssp -lbsspP -lici -lpthread -lm
+cp bsspadmin ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -c ../daemon/bsspclock.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -o bsspclock bsspclock.o -L./lib -L/usr/local/lib -lbsspP -lici -lpthread -lm
+cp bsspclock ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -c ../udp/udpbso.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -o udpbso udpbso.o -L./lib -L/usr/local/lib -lbsspP -lici -lpthread -lm
+cp udpbso ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -c ../udp/udpbsi.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -o udpbsi udpbsi.o -L./lib -L/usr/local/lib -lbsspP -lici -lpthread -lm
+cp udpbsi ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -c ../tcp/tcpbso.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -o tcpbso tcpbso.o -L./lib -L/usr/local/lib -ltcpbsa -lbsspP -lici -lpthread -lm
+cp tcpbso ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -c ../tcp/tcpbsi.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../udp -I../tcp -I/usr/local/include -o tcpbsi tcpbsi.o -L./lib -L/usr/local/lib -ltcpbsa -lbsspP -lici -lpthread -lm
+cp tcpbsi ./bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/bssp/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/bssp'
+gmake -C bssp install
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/bssp'
+cd doc; \
+	gmake -i install ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do cd $PF; gmake -i install ROOT=/usr/local; cd ..; done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/bssp/doc'
+cp man/man1/*.1 /usr/local/man/man1
+cp man/man3/*.3 /usr/local/man/man3
+cp man/man5/*.5 /usr/local/man/man5
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/bssp/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/bssp/i86_64-fedora'
+cp ../include/* /usr/local/include
+cp lib/* /usr/local/lib
+cp bin/* /usr/local/bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/bssp/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/bssp'
+gmake -C bpv7 all
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/bpv7'
+cd doc; \
+	mkdir -p man; \
+	mkdir -p man/man1; \
+	mkdir -p man/man3; \
+	mkdir -p man/man5; \
+	mkdir -p html; \
+	mkdir -p html/man1; \
+	mkdir -p html/man3; \
+	mkdir -p html/man5; \
+	gmake all ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do \
+			cd $PF; \
+			mkdir -p bin; \
+			mkdir -p lib; \
+			gmake all ROOT=/usr/local PTRS=0; \
+			cd ..; \
+		done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/bpv7/doc'
+pod2man -s 1 -c "BP executables" pod1/bibeadmin.pod man/man1/bibeadmin.1
+pod2man -s 1 -c "BP executables" pod1/bpadmin.pod man/man1/bpadmin.1
+pod2man -s 1 -c "BP executables" pod1/bpsecadmin.pod man/man1/bpsecadmin.1
+pod2man -s 1 -c "BP executables" pod1/bpchat.pod man/man1/bpchat.1
+pod2man -s 1 -c "BP executables" pod1/bpclock.pod man/man1/bpclock.1
+pod2man -s 1 -c "BP executables" pod1/bptransit.pod man/man1/bptransit.1
+pod2man -s 1 -c "BP executables" pod1/bpcounter.pod man/man1/bpcounter.1
+pod2man -s 1 -c "BP executables" pod1/bpdriver.pod man/man1/bpdriver.1
+pod2man -s 1 -c "BP executables" pod1/bpecho.pod man/man1/bpecho.1
+pod2man -s 1 -c "BP executables" pod1/bpsendfile.pod man/man1/bpsendfile.1
+pod2man -s 1 -c "BP executables" pod1/bprecvfile.pod man/man1/bprecvfile.1
+pod2man -s 1 -c "BP executables" pod1/bpsink.pod man/man1/bpsink.1
+pod2man -s 1 -c "BP executables" pod1/bpsource.pod man/man1/bpsource.1
+pod2man -s 1 -c "BP executables" pod1/bpstats.pod man/man1/bpstats.1
+pod2man -s 1 -c "BP executables" pod1/bpstats2.pod man/man1/bpstats2.1
+pod2man -s 1 -c "BP executables" pod1/bpnmtest.pod man/man1/bpnmtest.1
+pod2man -s 1 -c "BP executables" pod1/bplist.pod man/man1/bplist.1
+pod2man -s 1 -c "BP executables" pod1/bpcancel.pod man/man1/bpcancel.1
+pod2man -s 1 -c "BP executables" pod1/bptrace.pod man/man1/bptrace.1
+pod2man -s 1 -c "BP executables" pod1/bping.pod man/man1/bping.1
+pod2man -s 1 -c "BP executables" pod1/brsccla.pod man/man1/brsccla.1
+pod2man -s 1 -c "BP executables" pod1/brsscla.pod man/man1/brsscla.1
+pod2man -s 1 -c "BP executables" pod1/dgrcli.pod man/man1/dgrcli.1
+pod2man -s 1 -c "BP executables" pod1/dgrclo.pod man/man1/dgrclo.1
+pod2man -s 1 -c "BP executables" pod1/dtn2adminep.pod man/man1/dtn2adminep.1
+pod2man -s 1 -c "BP executables" pod1/dtn2admin.pod man/man1/dtn2admin.1
+pod2man -s 1 -c "BP executables" pod1/dtn2fw.pod man/man1/dtn2fw.1
+pod2man -s 1 -c "BP executables" pod1/ipnadminep.pod man/man1/ipnadminep.1
+pod2man -s 1 -c "BP executables" pod1/ipnadmin.pod man/man1/ipnadmin.1
+pod2man -s 1 -c "BP executables" pod1/ipnfw.pod man/man1/ipnfw.1
+pod2man -s 1 -c "BP executables" pod1/imcfw.pod man/man1/imcfw.1
+pod2man -s 1 -c "BP executables" pod1/ipnd.pod man/man1/ipnd.1
+pod2man -s 1 -c "BP executables" pod1/lgagent.pod man/man1/lgagent.1
+pod2man -s 1 -c "BP executables" pod1/lgsend.pod man/man1/lgsend.1
+pod2man -s 1 -c "BP executables" pod1/hmackeys.pod man/man1/hmackeys.1
+pod2man -s 1 -c "BP executables" pod1/bpclm.pod man/man1/bpclm.1
+pod2man -s 1 -c "BP executables" pod1/ltpcli.pod man/man1/ltpcli.1
+pod2man -s 1 -c "BP executables" pod1/ltpclo.pod man/man1/ltpclo.1
+pod2man -s 1 -c "BP executables" pod1/stcpcli.pod man/man1/stcpcli.1
+pod2man -s 1 -c "BP executables" pod1/stcpclo.pod man/man1/stcpclo.1
+pod2man -s 1 -c "BP executables" pod1/tcpcli.pod man/man1/tcpcli.1
+pod2man -s 1 -c "BP executables" pod1/tcpclo.pod man/man1/tcpclo.1
+pod2man -s 1 -c "BP executables" pod1/udpcli.pod man/man1/udpcli.1
+pod2man -s 1 -c "BP executables" pod1/udpclo.pod man/man1/udpclo.1
+pod2man -s 1 -c "BP executables" pod1/bibeclo.pod man/man1/bibeclo.1
+pod2man -s 1 -c "BP executables" pod1/dccpcli.pod man/man1/dccpcli.1
+pod2man -s 1 -c "BP executables" pod1/dccpclo.pod man/man1/dccpclo.1
+pod2man -s 1 -c "BP executables" pod1/cgrfetch.pod man/man1/cgrfetch.1
+pod2man -s 5 -c "BP configuration files" pod5/biberc.pod man/man5/biberc.5
+pod2man -s 5 -c "BP configuration files" pod5/bprc.pod man/man5/bprc.5
+pod2man -s 5 -c "BP configuration files" pod5/bpsecrc.pod man/man5/bpsecrc.5
+pod2man -s 5 -c "BP configuration files" pod5/ipnrc.pod man/man5/ipnrc.5
+pod2man -s 5 -c "BP configuration files" pod5/dtn2rc.pod man/man5/dtn2rc.5
+pod2man -s 5 -c "BP configuration files" pod5/lgfile.pod man/man5/lgfile.5
+pod2man -s 3 -c "BP library functions" pod3/bpextensions.pod man/man3/bpextensions.3
+pod2man -s 3 -c "BP library functions" pod3/bp.pod man/man3/bp.3
+pod2html --noindex --infile=pod1/bibeadmin.pod --outfile=html/man1/bibeadmin.html
+pod2html --noindex --infile=pod1/bpadmin.pod --outfile=html/man1/bpadmin.html
+pod2html --noindex --infile=pod1/bpsecadmin.pod --outfile=html/man1/bpsecadmin.html
+pod2html --noindex --infile=pod1/bpchat.pod --outfile=html/man1/bpchat.html
+pod2html --noindex --infile=pod1/bpclock.pod --outfile=html/man1/bpclock.html
+pod2html --noindex --infile=pod1/bptransit.pod --outfile=html/man1/bptransit.html
+pod2html --noindex --infile=pod1/bpcounter.pod --outfile=html/man1/bpcounter.html
+pod2html --noindex --infile=pod1/bpdriver.pod --outfile=html/man1/bpdriver.html
+pod2html --noindex --infile=pod1/bpecho.pod --outfile=html/man1/bpecho.html
+pod2html --noindex --infile=pod1/bpsendfile.pod --outfile=html/man1/bpsendfile.html
+pod2html --noindex --infile=pod1/bprecvfile.pod --outfile=html/man1/bprecvfile.html
+pod2html --noindex --infile=pod1/bpsink.pod --outfile=html/man1/bpsink.html
+pod2html --noindex --infile=pod1/bpsource.pod --outfile=html/man1/bpsource.html
+pod2html --noindex --infile=pod1/bpstats.pod --outfile=html/man1/bpstats.html
+pod2html --noindex --infile=pod1/bpstats2.pod --outfile=html/man1/bpstats2.html
+pod2html --noindex --infile=pod1/bpnmtest.pod --outfile=html/man1/bpnmtest.html
+pod2html --noindex --infile=pod1/bplist.pod --outfile=html/man1/bplist.html
+pod2html --noindex --infile=pod1/bpcancel.pod --outfile=html/man1/bpcancel.html
+pod2html --noindex --infile=pod1/bptrace.pod --outfile=html/man1/bptrace.html
+pod2html --noindex --infile=pod1/bping.pod --outfile=html/man1/bping.html
+pod2html --noindex --infile=pod1/brsccla.pod --outfile=html/man1/brsccla.html
+pod2html --noindex --infile=pod1/brsscla.pod --outfile=html/man1/brsscla.html
+pod2html --noindex --infile=pod1/dgrcli.pod --outfile=html/man1/dgrcli.html
+pod2html --noindex --infile=pod1/dgrclo.pod --outfile=html/man1/dgrclo.html
+pod2html --noindex --infile=pod1/dtn2adminep.pod --outfile=html/man1/dtn2adminep.html
+pod2html --noindex --infile=pod1/dtn2admin.pod --outfile=html/man1/dtn2admin.html
+pod2html --noindex --infile=pod1/dtn2fw.pod --outfile=html/man1/dtn2fw.html
+pod2html --noindex --infile=pod1/ipnadminep.pod --outfile=html/man1/ipnadminep.html
+pod2html --noindex --infile=pod1/ipnadmin.pod --outfile=html/man1/ipnadmin.html
+pod2html --noindex --infile=pod1/ipnfw.pod --outfile=html/man1/ipnfw.html
+pod2html --noindex --infile=pod1/imcfw.pod --outfile=html/man1/imcfw.html
+pod2html --noindex --infile=pod1/ipnd.pod --outfile=html/man1/ipnd.html
+pod2html --noindex --infile=pod1/lgagent.pod --outfile=html/man1/lgagent.html
+pod2html --noindex --infile=pod1/lgsend.pod --outfile=html/man1/lgsend.html
+pod2html --noindex --infile=pod1/hmackeys.pod --outfile=html/man1/hmackeys.html
+pod2html --noindex --infile=pod1/bpclm.pod --outfile=html/man1/bpclm.html
+pod2html --noindex --infile=pod1/ltpcli.pod --outfile=html/man1/ltpcli.html
+pod2html --noindex --infile=pod1/ltpclo.pod --outfile=html/man1/ltpclo.html
+pod2html --noindex --infile=pod1/stcpcli.pod --outfile=html/man1/stcpcli.html
+pod2html --noindex --infile=pod1/stcpclo.pod --outfile=html/man1/stcpclo.html
+pod2html --noindex --infile=pod1/tcpcli.pod --outfile=html/man1/tcpcli.html
+pod2html --noindex --infile=pod1/tcpclo.pod --outfile=html/man1/tcpclo.html
+pod2html --noindex --infile=pod1/udpcli.pod --outfile=html/man1/udpcli.html
+pod2html --noindex --infile=pod1/udpclo.pod --outfile=html/man1/udpclo.html
+pod2html --noindex --infile=pod1/bibeclo.pod --outfile=html/man1/bibeclo.html
+pod2html --noindex --infile=pod1/dccpcli.pod --outfile=html/man1/dccpcli.html
+pod2html --noindex --infile=pod1/dccpclo.pod --outfile=html/man1/dccpclo.html
+pod2html --noindex --infile=pod1/cgrfetch.pod --outfile=html/man1/cgrfetch.html
+pod2html --noindex --infile=pod5/biberc.pod --outfile=html/man5/biberc.html
+pod2html --noindex --infile=pod5/bprc.pod --outfile=html/man5/bprc.html
+pod2html --noindex --infile=pod5/bpsecrc.pod --outfile=html/man5/bpsecrc.html
+pod2html --noindex --infile=pod5/ipnrc.pod --outfile=html/man5/ipnrc.html
+pod2html --noindex --infile=pod5/dtn2rc.pod --outfile=html/man5/dtn2rc.html
+pod2html --noindex --infile=pod5/lgfile.pod --outfile=html/man5/lgfile.html
+pod2html --noindex --infile=pod3/bpextensions.pod --outfile=html/man3/bpextensions.html
+pod2html --noindex --infile=pod3/bp.pod --outfile=html/man3/bp.html
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/bpv7/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/bpv7/i86_64-fedora'
+rm -f *.o
+touch check
+mkdir -p lib
+mkdir -p bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/libbp.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/libbpP.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../bibe/bibe.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/bpsec.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/eureka.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -I../saga -c ../saga/saga.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/bei.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/pnb/pnb.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/bpq/bpq.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/meb/meb.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/bae/bae.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/hcb/hcb.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/snw/snw.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/imc/imc.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/bpsec/bpsec_util.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/bpsec/bpsec_instr.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/bpsec/profiles.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/bpsec/bib.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/bpsec/bcb.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/bpsec/bpsec_policy.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/bpsec/bpsec_policy_event.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/bpsec/bpsec_policy_eventset.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/ext/bpsec/bpsec_policy_rule.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../library/libbpnm.c
+gcc -fPIC -shared -o libbp.so libbp.o libbpP.o bibe.o bpsec.o eureka.o saga.o bei.o pnb.o bpq.o meb.o bae.o hcb.o snw.o imc.o bpsec_util.o bpsec_instr.o profiles.o bib.o bcb.o bpsec_policy.o bpsec_policy_event.o bpsec_policy_eventset.o bpsec_policy_rule.o libbpnm.o
+cp libbp.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../cgr/libcgr.c
+gcc -fPIC -shared -o libcgr.so libcgr.o
+cp libcgr.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../ipn/libipnfw.c
+gcc -fPIC -shared -o libipnfw.so libipnfw.o
+cp libipnfw.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../imc/libimcfw.c
+gcc -fPIC -shared -o libimcfw.so libimcfw.o
+cp libimcfw.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../dtn2/libdtn2fw.c
+gcc -fPIC -shared -o libdtn2fw.so libdtn2fw.o
+cp libdtn2fw.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../stcp/libstcpcla.c
+gcc -fPIC -shared -o libstcpcla.so libstcpcla.o
+cp libstcpcla.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../udp/libudpcla.c
+gcc -fPIC -shared -o libudpcla.so libudpcla.o
+cp libudpcla.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/bpadmin.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpadmin bpadmin.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpadmin ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/bpsecadmin.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpsecadmin bpsecadmin.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpsecadmin ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../test/bpsink.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpsink bpsink.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpsink ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../test/bpsource.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpsource bpsource.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpsource ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../test/bpdriver.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpdriver bpdriver.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpdriver ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../test/bpecho.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpecho bpecho.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpecho ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../test/bpcounter.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpcounter bpcounter.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpcounter ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/bpsendfile.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpsendfile bpsendfile.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpsendfile ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/bprecvfile.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bprecvfile bprecvfile.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bprecvfile ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../daemon/bpclock.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpclock bpclock.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpclock ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../daemon/bptransit.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bptransit bptransit.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bptransit ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../daemon/bpclm.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpclm bpclm.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpclm ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../ipn/ipnadmin.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o ipnadmin ipnadmin.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp ipnadmin ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../ipn/ipnfw.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o ipnfw ipnfw.o -L./lib -L/usr/local/lib -lcgr -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp ipnfw ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../ipn/ipnadminep.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o ipnadminep ipnadminep.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp ipnadminep ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../dtn2/dtn2admin.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o dtn2admin dtn2admin.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp dtn2admin ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../dtn2/dtn2fw.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o dtn2fw dtn2fw.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp dtn2fw ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../dtn2/dtn2adminep.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o dtn2adminep dtn2adminep.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp dtn2adminep ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../tcp/tcpcli.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o tcpcli tcpcli.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp tcpcli ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../tcp/tcpclo.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o tcpclo tcpclo.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp tcpclo ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../stcp/stcpcli.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o stcpcli stcpcli.o -L./lib -L/usr/local/lib -lstcpcla -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp stcpcli ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../stcp/stcpclo.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o stcpclo stcpclo.o -L./lib -L/usr/local/lib -lstcpcla -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp stcpclo ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../brs/brsscla.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o brsscla brsscla.o -L./lib -L/usr/local/lib -lstcpcla -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp brsscla ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../brs/brsccla.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o brsccla brsccla.o -L./lib -L/usr/local/lib -lstcpcla -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp brsccla ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../udp/udpcli.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o udpcli udpcli.o -L./lib -L/usr/local/lib -ludpcla -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp udpcli ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../udp/udpclo.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o udpclo udpclo.o -L./lib -L/usr/local/lib -ludpcla -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp udpclo ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../dgr/dgrcli.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o dgrcli dgrcli.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -ldgr -lici -lpthread -lm
+cp dgrcli ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../dgr/dgrclo.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o dgrclo dgrclo.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -ldgr -lici -lpthread -lm
+cp dgrclo ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../ltp/ltpcli.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o ltpcli ltpcli.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lltp -lici -lpthread -lm
+cp ltpcli ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../ltp/ltpclo.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o ltpclo ltpclo.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lltp -lici -lpthread -lm
+cp ltpclo ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/lgsend.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o lgsend lgsend.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp lgsend ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/lgagent.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o lgagent lgagent.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp lgagent ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/bptrace.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bptrace bptrace.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bptrace ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/bpstats.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpstats bpstats.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpstats ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/bplist.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bplist bplist.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bplist ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/bpcancel.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpcancel bpcancel.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpcancel ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/hmackeys.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o hmackeys hmackeys.o -L/usr/local/lib -lici -lpthread -lm
+cp hmackeys ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../test/bping.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bping bping.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bping ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../test/bpstats2.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpstats2 bpstats2.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpstats2 ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../test/bpchat.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpchat bpchat.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpchat ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../imc/imcfw.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o imcfw imcfw.o -L./lib -L/usr/local/lib -lcgr -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp imcfw ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../imc/imcadminep.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o imcadminep imcadminep.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp imcadminep ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../bssp/bsspcli.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bsspcli bsspcli.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lbssp -lbsspP -lici -lpthread -lm
+cp bsspcli ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../bssp/bsspclo.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bsspclo bsspclo.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lbssp -lbsspP -lici -lpthread -lm
+cp bsspclo ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../bibe/bibeclo.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bibeclo bibeclo.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bibeclo ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../bibe/bibeadmin.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bibeadmin bibeadmin.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bibeadmin ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../test/bpnmtest.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpnmtest bpnmtest.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpnmtest ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -I../ipnd -c ../ipnd/ipnd.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -I../ipnd -c ../ipnd/beacon.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -I../ipnd -c ../ipnd/helper.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -I../ipnd -c ../ipnd/bpa.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o ipnd ipnd.o beacon.o helper.o bpa.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lbloom -lpthread -lm
+cp ipnd ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/cgrfetch.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o cgrfetch cgrfetch.o -L./lib -L/usr/local/lib -lcgr -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp cgrfetch ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../utils/bpversion.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o bpversion bpversion.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bpversion ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -c ../daemon/cpsd.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -DENABLE_IMC -DBPSEC -I../ipn -I../imc -I../saga -I../dtn2 -I../library -I../library/ext -I../library/ext/pnb -I../library/ext/bpq -I../library/ext/meb -I../library/ext/bae -I../library/ext/hcb -I../library/ext/bpsec -I../library/ext/snw -I../library/ext/imc -I../bibe -I../stcp -I../udp -I../include -I/usr/local/include -DBP_EXTENDED -o cpsd cpsd.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp cpsd ./bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/bpv7/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/bpv7'
+gmake -C bpv7 install
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/bpv7'
+cd doc; \
+	gmake -i install ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do cd $PF; gmake -i install ROOT=/usr/local; cd ..; done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/bpv7/doc'
+cp man/man1/*.1 /usr/local/man/man1
+cp man/man3/*.3 /usr/local/man/man3
+cp man/man5/*.5 /usr/local/man/man5
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/bpv7/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/bpv7/i86_64-fedora'
+cp ../include/* /usr/local/include
+cp lib/* /usr/local/lib
+cp bin/* /usr/local/bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/bpv7/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/bpv7'
+gmake -C ams all
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/ams'
+cd doc; \
+	mkdir -p man; \
+	mkdir -p man/man1; \
+	mkdir -p man/man3; \
+	mkdir -p man/man5; \
+	mkdir -p html; \
+	mkdir -p html/man1; \
+	mkdir -p html/man3; \
+	mkdir -p html/man5; \
+	gmake all ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do \
+			cd $PF; \
+			mkdir -p bin; \
+			mkdir -p lib; \
+			gmake all ROOT=/usr/local PTRS=0; \
+			cd ..; \
+		done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ams/doc'
+pod2man -s 1 -c "AMS executables" pod1/amsbenchr.pod man/man1/amsbenchr.1
+pod2man -s 1 -c "AMS executables" pod1/amsbenchs.pod man/man1/amsbenchs.1
+pod2man -s 1 -c "AMS executables" pod1/amsd.pod man/man1/amsd.1
+pod2man -s 1 -c "AMS executables" pod1/amshello.pod man/man1/amshello.1
+pod2man -s 1 -c "AMS executables" pod1/amslog.pod man/man1/amslog.1
+pod2man -s 1 -c "AMS executables" pod1/amslogprt.pod man/man1/amslogprt.1
+pod2man -s 1 -c "AMS executables" pod1/amspub.pod man/man1/amspub.1
+pod2man -s 1 -c "AMS executables" pod1/amsshell.pod man/man1/amsshell.1
+pod2man -s 1 -c "AMS executables" pod1/amsstop.pod man/man1/amsstop.1
+pod2man -s 1 -c "AMS executables" pod1/amsmib.pod man/man1/amsmib.1
+pod2man -s 1 -c "AMS executables" pod1/amssub.pod man/man1/amssub.1
+pod2man -s 1 -c "AMS executables" pod1/ramsgate.pod man/man1/ramsgate.1
+pod2man -s 3 -c "AMS library functions" pod3/ams.pod man/man3/ams.3
+pod2man -s 5 -c "AMS configuration files" pod5/petition_log.pod man/man5/petition_log.5
+pod2man -s 5 -c "AMS configuration files" pod5/amsrc.pod man/man5/amsrc.5
+pod2man -s 5 -c "AMS configuration files" pod5/amsxml.pod man/man5/amsxml.5
+pod2html --noindex --infile=pod1/amsbenchr.pod --outfile=html/man1/amsbenchr.html
+pod2html --noindex --infile=pod1/amsbenchs.pod --outfile=html/man1/amsbenchs.html
+pod2html --noindex --infile=pod1/amsd.pod --outfile=html/man1/amsd.html
+pod2html --noindex --infile=pod1/amshello.pod --outfile=html/man1/amshello.html
+pod2html --noindex --infile=pod1/amslog.pod --outfile=html/man1/amslog.html
+pod2html --noindex --infile=pod1/amslogprt.pod --outfile=html/man1/amslogprt.html
+pod2html --noindex --infile=pod1/amspub.pod --outfile=html/man1/amspub.html
+pod2html --noindex --infile=pod1/amsshell.pod --outfile=html/man1/amsshell.html
+pod2html --noindex --infile=pod1/amsstop.pod --outfile=html/man1/amsstop.html
+pod2html --noindex --infile=pod1/amsmib.pod --outfile=html/man1/amsmib.html
+pod2html --noindex --infile=pod1/amssub.pod --outfile=html/man1/amssub.html
+pod2html --noindex --infile=pod1/ramsgate.pod --outfile=html/man1/ramsgate.html
+pod2html --noindex --infile=pod3/ams.pod --outfile=html/man3/ams.html
+pod2html --noindex --infile=pod5/petition_log.pod --outfile=html/man5/petition_log.html
+pod2html --noindex --infile=pod5/amsrc.pod --outfile=html/man5/amsrc.html
+pod2html --noindex --infile=pod5/amsxml.pod --outfile=html/man5/amsxml.html
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ams/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ams/i86_64-fedora'
+rm -f *.o
+touch check
+touch ./lib/
+touch ./bin/
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../library/libams.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../library/amscommon.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../library/loadmib.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../library/crypt.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../library/dgrts.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../library/udpts.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../library/tcpts.c
+gcc -fPIC -shared -o libams.so libams.o amscommon.o loadmib.o crypt.o dgrts.o udpts.o tcpts.o
+cp libams.so ./lib
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../library/amsd.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -o amsd amsd.o libams.o amscommon.o loadmib.o crypt.o dgrts.o udpts.o tcpts.o -L./lib -L/usr/local/lib -ldgr -lici -lpthread -lm
+cp amsd ./bin
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../test/amshello.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -o amshello amshello.o -L./lib -L/usr/local/lib -lams -ldgr -lici -lpthread -lm
+cp amshello ./bin
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../test/amsshell.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -o amsshell amsshell.o -L./lib -L/usr/local/lib -lams -ldgr -lici -lpthread -lm
+cp amsshell ./bin
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../test/amslog.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -o amslog amslog.o -L./lib -L/usr/local/lib -lams -ldgr -lici -lpthread -lm
+cp amslog ./bin
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../test/amslogprt.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -o amslogprt amslogprt.o -L./lib -L/usr/local/lib
+cp amslogprt ./bin
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../test/amsbenchs.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -o amsbenchs amsbenchs.o -L./lib -L/usr/local/lib -lams -ldgr -lici -lpthread -lm
+cp amsbenchs ./bin
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../test/amsbenchr.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -o amsbenchr amsbenchr.o -L./lib -L/usr/local/lib -lams -ldgr -lici -lpthread -lm
+cp amsbenchr ./bin
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../rams/librams.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../rams/ramscommon.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../rams/ramsgate.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -o ramsgate librams.o ramscommon.o ramsgate.o -L./lib -L/usr/local/lib -lbp -limcfw -lipnfw -ldtn2fw -lams -ldgr -lici -lpthread -lm
+cp ramsgate ./bin
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../utils/amsstop.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -o amsstop amsstop.o -L./lib -L/usr/local/lib -lams -ldgr -lici -lpthread -lm
+cp amsstop ./bin
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -c ../utils/amsmib.c
+gcc -g -Wall -Werror -Dlinux -DUDPTS -DTCPTS -DDGRTS -DNOEXPAT -fPIC -DSPACE_ORDER=3 -I../library -I../include -I../rams -I/usr/local/include -o amsmib amsmib.o -L./lib -L/usr/local/lib -lams -ldgr -lici -lpthread -lm
+cp amsmib ./bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ams/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/ams'
+gmake -C ams install
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/ams'
+cd doc; \
+	gmake -i install ROOT=/usr/local; \
+	cd ..;
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ams/doc'
+cp man/man1/*.1 /usr/local/man/man1
+cp man/man3/*.3 /usr/local/man/man3
+cp man/man5/*.5 /usr/local/man/man5
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ams/doc'
+for PF in i86_64-fedora; \
+		do cd $PF; gmake -i install ROOT=/usr/local; cd ..; done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/ams/i86_64-fedora'
+cp ../include/* /usr/local/include
+cp lib/* /usr/local/lib
+cp bin/* /usr/local/bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/ams/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/ams'
+gmake -C cfdp all
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/cfdp'
+cd doc; \
+	mkdir -p man; \
+	mkdir -p man/man1; \
+	mkdir -p man/man3; \
+	mkdir -p man/man5; \
+	mkdir -p html; \
+	mkdir -p html/man1; \
+	mkdir -p html/man3; \
+	mkdir -p html/man5; \
+	gmake all ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do \
+			cd $PF; \
+			mkdir -p bin; \
+			mkdir -p lib; \
+			gmake all ROOT=/usr/local PTRS=0; \
+			cd ..; \
+		done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/cfdp/doc'
+pod2man -s 1 -c "CFDP executables" pod1/cfdpadmin.pod man/man1/cfdpadmin.1
+pod2man -s 1 -c "CFDP executables" pod1/cfdpclock.pod man/man1/cfdpclock.1
+pod2man -s 1 -c "CFDP executables" pod1/cfdptest.pod man/man1/cfdptest.1
+pod2man -s 1 -c "CFDP executables" pod1/bputa.pod man/man1/bputa.1
+pod2man -s 1 -c "CFDP executables" pod1/bpcp.pod man/man1/bpcp.1
+pod2man -s 1 -c "CFDP executables" pod1/bpcpd.pod man/man1/bpcpd.1
+pod2man -s 5 -c "CFDP configuration files" pod5/cfdprc.pod man/man5/cfdprc.5
+pod2man -s 3 -c "CFDP library functions" pod3/cfdp.pod man/man3/cfdp.3
+pod2html --noindex --infile=pod1/cfdpadmin.pod --outfile=html/man1/cfdpadmin.html
+pod2html --noindex --infile=pod1/cfdpclock.pod --outfile=html/man1/cfdpclock.html
+pod2html --noindex --infile=pod1/cfdptest.pod --outfile=html/man1/cfdptest.html
+pod2html --noindex --infile=pod1/bputa.pod --outfile=html/man1/bputa.html
+pod2html --noindex --infile=pod1/bpcp.pod --outfile=html/man1/bpcp.html
+pod2html --noindex --infile=pod1/bpcpd.pod --outfile=html/man1/bpcpd.html
+pod2html --noindex --infile=pod5/cfdprc.pod --outfile=html/man5/cfdprc.html
+pod2html --noindex --infile=pod3/cfdp.pod --outfile=html/man3/cfdp.html
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/cfdp/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/cfdp/i86_64-fedora'
+rm -f *.o
+touch check
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -c ../library/libcfdp.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -c ../library/libcfdpP.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -c ../library/libcfdpops.c
+gcc -fPIC -shared -o libcfdp.so libcfdp.o libcfdpP.o libcfdpops.o
+cp libcfdp.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -c ../utils/cfdpadmin.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -o cfdpadmin cfdpadmin.o -L./lib -L/usr/local/lib -lcfdp -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp cfdpadmin ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -c ../daemon/cfdpclock.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -o cfdpclock cfdpclock.o -L./lib -L/usr/local/lib -lcfdp -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp cfdpclock ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -c ../bp/bputa.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -o bputa bputa.o -L./lib -L/usr/local/lib -lcfdp -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bputa ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -c ../tcp/tcputa.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -o tcputa tcputa.o -L./lib -L/usr/local/lib -lcfdp -lici -lpthread -lm
+cp tcputa ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -c ../test/cfdptest.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -o cfdptest cfdptest.o -L./lib -L/usr/local/lib -lcfdp -lcfdp -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp cfdptest ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -c ../utils/bpcp.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -o bpcp bpcp.o -L./lib -L/usr/local/lib -lici -lcfdp -lpthread -I../utils -lm
+cp bpcp ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -c ../utils/bpcpd.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../include -I/usr/local/include -o bpcpd bpcpd.o -L./lib -L/usr/local/lib -lici -lcfdp -lpthread -I../utils -lm
+cp bpcpd ./bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/cfdp/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/cfdp'
+gmake -C cfdp install
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/cfdp'
+cd doc; \
+	gmake -i install ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do cd $PF; gmake -i install ROOT=/usr/local; cd ..; done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/cfdp/doc'
+cp man/man1/*.1 /usr/local/man/man1
+cp man/man3/*.3 /usr/local/man/man3
+cp man/man5/*.5 /usr/local/man/man5
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/cfdp/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/cfdp/i86_64-fedora'
+cp ../include/* /usr/local/include
+cp lib/* /usr/local/lib
+cp bin/* /usr/local/bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/cfdp/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/cfdp'
+gmake -C bss all
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/bss'
+cd doc; \
+	mkdir -p man; \
+	mkdir -p man/man1; \
+	mkdir -p man/man3; \
+	mkdir -p html; \
+	mkdir -p html/man1; \
+	mkdir -p html/man3; \
+	gmake all ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do \
+			cd $PF; \
+			mkdir -p bin; \
+			mkdir -p lib; \
+			gmake all ROOT=/usr/local PTRS=0; \
+			cd ..; \
+		done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/bss/doc'
+pod2man -s 1 -c "BSS executables" pod1/bssrecv.pod man/man1/bssrecv.1
+pod2man -s 1 -c "BSS executables" pod1/bssStreamingApp.pod man/man1/bssStreamingApp.1
+pod2man -s 3 -c "BSS library functions" pod3/bss.pod man/man3/bss.3
+pod2html --noindex --infile=pod1/bssrecv.pod --outfile=html/man1/bssrecv.html
+pod2html --noindex --infile=pod1/bssStreamingApp.pod --outfile=html/man1/bssStreamingApp.html
+pod2html --noindex --infile=pod3/bss.pod --outfile=html/man3/bss.html
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/bss/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/bss/i86_64-fedora'
+rm -f *.o
+touch check
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../library/libbss.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../library/libbssP.c
+gcc -fPIC -shared -o libbss.so libbss.o libbssP.o
+cp libbss.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../test/bssrecv.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -o bssrecv bssrecv.o -L./lib -L/usr/local/lib -lbss -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bssrecv ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../test/bssStreamingApp.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -o bssStreamingApp bssStreamingApp.o -L./lib -L/usr/local/lib -lbss -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bssStreamingApp ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../test/bsscounter.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -o bsscounter bsscounter.o -L./lib -L/usr/local/lib -lbss -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bsscounter ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -c ../test/bssdriver.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../library -I../test -I../include -I/usr/local/include -o bssdriver bssdriver.o -L./lib -L/usr/local/lib -lbss -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp bssdriver ./bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/bss/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/bss'
+gmake -C bss install
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/bss'
+cd doc; \
+	gmake -i install ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do cd $PF; gmake -i install ROOT=/usr/local; cd ..; done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/bss/doc'
+cp man/man1/*.1 /usr/local/man/man1
+cp man/man3/*.3 /usr/local/man/man3
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/bss/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/bss/i86_64-fedora'
+cp ../include/* /usr/local/include
+cp lib/* /usr/local/lib
+cp bin/* /usr/local/bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/bss/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/bss'
+gmake -C dtpc all
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/dtpc'
+cd doc; \
+	mkdir -p man; \
+	mkdir -p man/man1; \
+	mkdir -p man/man3; \
+	mkdir -p man/man5; \
+	mkdir -p html; \
+	mkdir -p html/man1; \
+	mkdir -p html/man3; \
+	mkdir -p html/man5; \
+	gmake all ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do \
+			cd $PF; \
+			mkdir -p bin; \
+			mkdir -p lib; \
+			gmake all ROOT=/usr/local PTRS=0; \
+			cd ..; \
+		done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/dtpc/doc'
+pod2man -s 1 -c "DTPC executables" pod1/dtpcd.pod man/man1/dtpcd.1
+pod2man -s 1 -c "DTPC executables" pod1/dtpcclock.pod man/man1/dtpcclock.1
+pod2man -s 1 -c "DTPC executables" pod1/dtpcadmin.pod man/man1/dtpcadmin.1
+pod2man -s 1 -c "DTPC executables" pod1/dtpcsend.pod man/man1/dtpcsend.1
+pod2man -s 1 -c "DTPC executables" pod1/dtpcreceive.pod man/man1/dtpcreceive.1
+pod2man -s 3 -c "DTPC library functions" pod3/dtpc.pod man/man3/dtpc.3
+pod2man -s 5 -c "DTPC files" pod5/dtpcrc.pod man/man5/dtpcrc.5
+pod2html --noindex --infile=pod1/dtpcd.pod --outfile=html/man1/dtpcd.html
+pod2html --noindex --infile=pod1/dtpcclock.pod --outfile=html/man1/dtpcclock.html
+pod2html --noindex --infile=pod1/dtpcadmin.pod --outfile=html/man1/dtpcadmin.html
+pod2html --noindex --infile=pod1/dtpcsend.pod --outfile=html/man1/dtpcsend.html
+pod2html --noindex --infile=pod1/dtpcreceive.pod --outfile=html/man1/dtpcreceive.html
+pod2html --noindex --infile=pod3/dtpc.pod --outfile=html/man3/dtpc.html
+pod2html --noindex --infile=pod5/dtpcrc.pod --outfile=html/man5/dtpcrc.html
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/dtpc/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/dtpc/i86_64-fedora'
+rm -f *.o
+touch check
+gcc -g -Wall -Werror -Dlinux -fPIC -I../library -I../include -I/usr/local/include -c ../library/libdtpc.c
+gcc -g -Wall -Werror -Dlinux -fPIC -I../library -I../include -I/usr/local/include -c ../library/libdtpcP.c
+gcc -fPIC -shared -o libdtpc.so libdtpc.o libdtpcP.o
+cp libdtpc.so ./lib
+gcc -g -Wall -Werror -Dlinux -fPIC -I../library -I../include -I/usr/local/include -c ../daemon/dtpcd.c
+gcc -g -Wall -Werror -Dlinux -fPIC -I../library -I../include -I/usr/local/include -o dtpcd dtpcd.o -L./lib -L/usr/local/lib -ldtpc -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp dtpcd ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -I../library -I../include -I/usr/local/include -c ../daemon/dtpcclock.c
+gcc -g -Wall -Werror -Dlinux -fPIC -I../library -I../include -I/usr/local/include -o dtpcclock dtpcclock.o -L./lib -L/usr/local/lib -ldtpc -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp dtpcclock ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -I../library -I../include -I/usr/local/include -c ../test/dtpcsend.c
+gcc -g -Wall -Werror -Dlinux -fPIC -I../library -I../include -I/usr/local/include -o dtpcsend dtpcsend.o -L./lib -L/usr/local/lib -ldtpc -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp dtpcsend ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -I../library -I../include -I/usr/local/include -c ../test/dtpcreceive.c
+gcc -g -Wall -Werror -Dlinux -fPIC -I../library -I../include -I/usr/local/include -o dtpcreceive dtpcreceive.o -L./lib -L/usr/local/lib -ldtpc -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp dtpcreceive ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -I../library -I../include -I/usr/local/include -c ../utils/dtpcadmin.c
+gcc -g -Wall -Werror -Dlinux -fPIC -I../library -I../include -I/usr/local/include -o dtpcadmin dtpcadmin.o -L./lib -L/usr/local/lib -ldtpc -lbp -limcfw -lipnfw -ldtn2fw -lici -lpthread -lm
+cp dtpcadmin ./bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/dtpc/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/dtpc'
+gmake -C dtpc install
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/dtpc'
+cd doc; \
+	gmake -i install ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora; \
+		do cd $PF; gmake -i install ROOT=/usr/local; cd ..; done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/dtpc/doc'
+cp man/man1/*.1 /usr/local/man/man1
+cp man/man3/*.3 /usr/local/man/man3
+cp man/man5/*.5 /usr/local/man/man5
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/dtpc/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/dtpc/i86_64-fedora'
+cp ../include/* /usr/local/include
+cp lib/* /usr/local/lib
+cp bin/* /usr/local/bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/dtpc/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/dtpc'
+gmake -C restart all BP=bpv7
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/restart'
+cd doc; \
+	mkdir -p man; \
+	mkdir -p man/man1; \
+	mkdir -p html; \
+	mkdir -p html/man1; \
+	gmake all ROOT=/usr/local BP=bpv7; \
+	cd ..; \
+	for PF in i86_64-fedora;\
+		do \
+			cd $PF; \
+			mkdir -p bin; \
+			gmake all ROOT=/usr/local BP=bpv7 PTRS=0; \
+			cd ..; \
+		done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/restart/doc'
+pod2man -s 1 -c "Restart executables" pod1/ionrestart.pod man/man1/ionrestart.1
+pod2html --noindex --infile=pod1/ionrestart.pod --outfile=html/man1/ionrestart.html
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/restart/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/restart/i86_64-fedora'
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../../ici/include -I../../ici/sdr -I../../ltp/include -I../../bpv7/include -I../../cfdp/include -I../../ltp/library -I../../bpv7/library -I../../cfdp/library -c ../utils/ionrestart.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../../ici/include -I../../ici/sdr -I../../ltp/include -I../../bpv7/include -I../../cfdp/include -I../../ltp/library -I../../bpv7/library -I../../cfdp/library -o ionrestart ionrestart.o -L./lib -L../../ici/i86_64-fedora/lib -L../../ltp/i86_64-fedora/lib -L../../bpv7/i86_64-fedora/lib -L../../cfdp/i86_64-fedora/lib -lcfdp -lcgr -lbp -limcfw -lipnfw -ldtn2fw -lltp -lici -lpthread -lm
+cp ionrestart ./bin
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../../ici/include -I../../ici/sdr -I../../ltp/include -I../../bpv7/include -I../../cfdp/include -I../../ltp/library -I../../bpv7/library -I../../cfdp/library -c ../utils/ionexit.c
+gcc -g -Wall -Werror -Dlinux -fPIC -DSPACE_ORDER=3 -I../../ici/include -I../../ici/sdr -I../../ltp/include -I../../bpv7/include -I../../cfdp/include -I../../ltp/library -I../../bpv7/library -I../../cfdp/library -o ionexit ionexit.o -L./lib -L../../bpv7/i86-mingw/lib -L../../ici/i86-mingw/lib -L../../ltp/i86-mingw/lib -lbp -limcfw -lipnfw -ldtn2fw -lltp -lici -lpthread -lm
+cp ionexit ./bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/restart/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/restart'
+gmake -C restart install BP=bpv7
+gmake[1]: Entering directory '/home/scott/ion-dtn-code/restart'
+cd doc; \
+	gmake -i install ROOT=/usr/local; \
+	cd ..; \
+	for PF in i86_64-fedora;\
+		do cd $PF; gmake -i install ROOT=/usr/local BP=bpv7; cd ..; done
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/restart/doc'
+cp man/man1/*.1 /usr/local/man/man1
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/restart/doc'
+gmake[2]: Entering directory '/home/scott/ion-dtn-code/restart/i86_64-fedora'
+cp bin/* /usr/local/bin
+gmake[2]: Leaving directory '/home/scott/ion-dtn-code/restart/i86_64-fedora'
+gmake[1]: Leaving directory '/home/scott/ion-dtn-code/restart'

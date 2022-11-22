@@ -1,0 +1,8 @@
+#wmKey 1
+sdrName ion
+wmSize 500000000
+configFlags 1 #2-file, 1-dram
+heapWords 50000000
+sdrWmSize 500000000
+pathName '*ENTER YOUR ION'S HOME DIRECTORY'
+

@@ -1,0 +1,52 @@
+# INITIALIZE
+# Ion node number:
+
+## begin ionadmin 
+1 20 '*ENTER ION'S HOME DIRECTORY*'
+s
+
+a contact +1 +360000000 82 20 100000
+a contact +1 +360000000 20 82 100000
+
+a range +1 +360000000 20 82 1
+a range +1 +360000000 82 20 1
+
+m production 1000000
+m consumption 1000000
+e 1
+## end ionadmin 
+
+
+## begin bpadmin 
+1
+a scheme ipn 'ipnfw' 'ipnadminep'
+
+a endpoint ipn:20.0 q
+a endpoint ipn:20.1 q
+a endpoint ipn:20.2 q
+a endpoint ipn:20.3 q
+a endpoint ipn:20.4 q
+a endpoint ipn:20.5 q
+a endpoint ipn:20.6 q
+a endpoint ipn:20.64 q
+a endpoint ipn:20.65 q
+
+a protocol uart 1400 100
+
+a outduct uart /dev/ttyACM0,115200 uartclo
+a induct uart /dev/ttyACM0,115200 uartcli
+s
+e 1
+## end bpadmin 
+
+## begin ipnadmin 
+a plan 82 uart//dev/ttyACM0,115200
+e 1
+## end ipnadmin
+
+## begin ionsecadmin
+1
+e 1
+## end ionsecadmin
+
+
